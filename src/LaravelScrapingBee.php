@@ -184,7 +184,7 @@ class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#javascript-execution
      */
-    public function executeJsSnippet($jsCodeSnippet): self
+    public function executeJsSnippet(string $jsCodeSnippet): self
     {
         $this->params['js_snippet'] = base64_encode($jsCodeSnippet);
 
