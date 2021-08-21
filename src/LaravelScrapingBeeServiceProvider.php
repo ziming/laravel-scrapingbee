@@ -4,7 +4,6 @@ namespace Ziming\LaravelScrapingBee;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ziming\LaravelScrapingBee\Commands\LaravelScrapingBeeCommand;
 
 class LaravelScrapingBeeServiceProvider extends PackageServiceProvider
 {

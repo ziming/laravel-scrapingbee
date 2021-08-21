@@ -2,8 +2,8 @@
 
 namespace Ziming\LaravelScrapingBee;
 
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use \Illuminate\Http\Client\Response;
 
 class LaravelScrapingBee
 {
@@ -15,7 +15,7 @@ class LaravelScrapingBee
 
     public static function make(): self
     {
-        return new static;
+        return new static();
     }
 
     private function __construct()
@@ -40,7 +40,7 @@ class LaravelScrapingBee
             $this->params = array_merge_recursive($this->params, $params);
         }
 
-        if ($headers) {            
+        if ($headers) {
             $this->setHeaders($headers);
         }
 
@@ -49,7 +49,7 @@ class LaravelScrapingBee
         }
 
         $this->params['api_key'] = $this->apiKey;
-        
+
 
         $http = Http::withHeaders($this->headers);
 
@@ -57,7 +57,7 @@ class LaravelScrapingBee
 
             // Saw this in the docs but not sure if it is needed. Commenting it for now
             // If anyone using scrapingbee with POST URLs let me know if this is required.
-            
+
             // $http->withHeaders([
             //     'Content-Type' => 'application/x-www-form-urlencoded; charset=utf-8',
             // ]);
@@ -97,6 +97,7 @@ class LaravelScrapingBee
     {
         // urlencode make things fail somehow. Maybe urlencode is run at the Http::get() / Http::post() level
         $this->params['url'] = $url;
+
         return $this;
     }
 
@@ -106,6 +107,7 @@ class LaravelScrapingBee
     public function blockAds(): self
     {
         $this->params['block_ads'] = true;
+
         return $this;
     }
 
@@ -115,6 +117,7 @@ class LaravelScrapingBee
     public function allowResources(): self
     {
         $this->params['block_resources'] = false;
+
         return $this;
     }
 
@@ -124,6 +127,7 @@ class LaravelScrapingBee
     public function setCustomCookies(array $cookies): self
     {
         $this->params['cookies'] = http_build_query($cookies, '', ';');
+
         return $this;
     }
 
@@ -133,6 +137,7 @@ class LaravelScrapingBee
     public function countryCode(string $countryCode): self
     {
         $this->params['country_code'] = $countryCode;
+
         return $this;
     }
 
@@ -142,6 +147,7 @@ class LaravelScrapingBee
     public function customGoogle(): self
     {
         $this->params['custom_google'] = true;
+
         return $this;
     }
 
@@ -151,6 +157,7 @@ class LaravelScrapingBee
     public function device(string $device): self
     {
         $this->params['device'] = $device;
+
         return $this;
     }
 
@@ -160,6 +167,7 @@ class LaravelScrapingBee
     public function extractDataFromCssRules(array $cssRules): self
     {
         $this->params['extract_rules'] = json_encode($cssRules);
+
         return $this;
     }
 
@@ -169,6 +177,7 @@ class LaravelScrapingBee
     public function jsonResponse(): self
     {
         $this->params['json_response'] = true;
+
         return $this;
     }
 
@@ -178,6 +187,7 @@ class LaravelScrapingBee
     public function executeJsSnippet($jsCodeSnippet): self
     {
         $this->params['js_snippet'] = base64_encode($jsCodeSnippet);
+
         return $this;
     }
 
@@ -199,6 +209,7 @@ class LaravelScrapingBee
     public function premiumProxy(): self
     {
         $this->params['premium_proxy'] = true;
+
         return $this;
     }
 
@@ -208,6 +219,7 @@ class LaravelScrapingBee
     public function disableJs(): self
     {
         $this->params['render_js'] = false;
+
         return $this;
     }
 
@@ -217,6 +229,7 @@ class LaravelScrapingBee
     public function pageSource(): self
     {
         $this->params['return_page_source'] = true;
+
         return $this;
     }
 
@@ -226,6 +239,7 @@ class LaravelScrapingBee
     public function screenshot(): self
     {
         $this->params['screenshot'] = true;
+
         return $this;
     }
 
@@ -235,6 +249,7 @@ class LaravelScrapingBee
     public function screenshotFullPage(): self
     {
         $this->params['screenshot_full_page'] = true;
+
         return $this;
     }
 
@@ -244,6 +259,7 @@ class LaravelScrapingBee
     public function transparentHttpStatusCode(): self
     {
         $this->params['transparent_status_code'] = true;
+
         return $this;
     }
 
@@ -253,6 +269,7 @@ class LaravelScrapingBee
     public function wait(int $milliseconds): self
     {
         $this->params['wait'] = $milliseconds;
+
         return $this;
     }
 
@@ -262,6 +279,7 @@ class LaravelScrapingBee
     public function waitForCssSelector(string $cssSelector): self
     {
         $this->params['wait_for'] = $cssSelector;
+
         return $this;
     }
 
@@ -271,6 +289,7 @@ class LaravelScrapingBee
     public function windowWidth(int $windowWidth): self
     {
         $this->params['window_width'] = $windowWidth;
+
         return $this;
     }
 
@@ -280,25 +299,28 @@ class LaravelScrapingBee
     public function windowHeight(int $windowHeight): self
     {
         $this->params['window_height'] = $windowHeight;
+
         return $this;
     }
 
     public function setParams(array $params): self
     {
         $this->params = $params;
+
         return $this;
     }
 
     public function setHeaders(array $headers): self
     {
         $this->headers = array_combine(
-            array_map(function($key) { 
-                return 'Spb-'. $key; 
+            array_map(function ($key) {
+                return 'Spb-'. $key;
             }, array_keys($headers)),
             $headers
         );
 
         $this->params['forward_headers'] = true;
+
         return $this;
     }
 
@@ -306,6 +328,7 @@ class LaravelScrapingBee
     {
         $this->params = [];
         $this->headers = [];
+
         return $this;
     }
 
