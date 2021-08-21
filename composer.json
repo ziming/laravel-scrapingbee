@@ -1,18 +1,18 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "ziming/laravel-scrapingbee",
+    "description": "A PHP Laravel Library for ScrapingBee",
     "keywords": [
-        ":vendor_name",
+        "ziming",
         "laravel",
-        "package_slug"
+        "laravel-scrapingbee"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/ziming/laravel-scrapingbee",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
-            "role": "Developer"
+            "name": "Ziming",
+            "email": "ziming.opensource@gmail.com",
+            "role": "Package Uploader"
         }
     ],
     "require": {
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Ziming\\LaravelScrapingBee\\": "src",
+            "Ziming\\LaravelScrapingBee\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Ziming\\LaravelScrapingBee\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Ziming\\LaravelScrapingBee\\LaravelScrapingBeeServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "LaravelScrapingBee": "Ziming\\LaravelScrapingBee\\LaravelScrapingBeeFacade"
             }
         }
     },

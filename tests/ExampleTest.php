@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Ziming\LaravelScrapingBee\Tests;
 
 class ExampleTest extends TestCase
 {
