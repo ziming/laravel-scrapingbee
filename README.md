@@ -35,6 +35,8 @@ return [
 $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
 // Look at the source code of `src/LaravelScrapingBee.php` for now. Proper Docs will be added later.
+
+// https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php
 ```
 
 ## Testing
