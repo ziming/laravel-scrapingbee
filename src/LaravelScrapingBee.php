@@ -5,7 +5,7 @@ namespace Ziming\LaravelScrapingBee;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
-class LaravelScrapingBee
+final class LaravelScrapingBee
 {
     protected string $baseUrl;
     protected string $apiKey;
@@ -30,7 +30,7 @@ class LaravelScrapingBee
     /**
      * Matching it with ScrapingBee Python Library
      */
-    protected function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = []): Response
+    private function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = []): Response
     {
         if ($url) {
             $this->url($url);
