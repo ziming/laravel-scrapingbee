@@ -33,7 +33,7 @@ final class LaravelScrapingBee
     private function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = []): Response
     {
         if ($url) {
-            $this->url($url);
+            $this->setUrl($url);
         }
 
         if ($params) {
@@ -93,7 +93,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#encoding-url
      */
-    public function url(string $url): self
+    public function setUrl(string $url): self
     {
         // urlencode make things fail somehow. Maybe urlencode is run at the Http::get() / Http::post() level
         $this->params['url'] = $url;
