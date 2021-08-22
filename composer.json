@@ -2,7 +2,6 @@
     "name": "ziming/laravel-scrapingbee",
     "description": "A PHP Laravel Library for ScrapingBee",
     "keywords": [
-        "ziming",
         "laravel",
         "laravel-scrapingbee"
     ],
