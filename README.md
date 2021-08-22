@@ -34,7 +34,7 @@ return [
 ```php
 $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
-$scrapingBeeClient->blockAds()
+$response = $scrapingBeeClient->blockAds()
     ->premiumProxy()
     ->get('https://www.scrapingbee.com')
 
