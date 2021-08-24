@@ -13,14 +13,18 @@ final class LaravelScrapingBee
     protected array $params = [];
     protected array $headers = [];
 
-    public static function make(): self
+    public static function make(?string $apiKey = null): self
     {
-        return new static();
+        return new static($apiKey);
     }
 
-    private function __construct()
+    public function __construct(?string $apiKey = null)
     {
-        $this->apiKey = config('scrapingbee.api_key');
+        // If somebody pass '' into the constructor, we should use '' as the api key
+        // even if it doesn't make sense.
+        // If $apiKey is null, then we use the 1 in the config file.
+        $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
+
         $this->baseUrl = config(
             'scrapingbee.base_url',
             'https://app.scrapingbee.com/api/v1/'
