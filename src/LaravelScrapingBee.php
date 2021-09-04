@@ -34,7 +34,7 @@ final class LaravelScrapingBee
     /**
      * Matching it with ScrapingBee Python Library
      */
-    private function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = []): Response
+    private function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         if ($url) {
             $this->setUrl($url);
@@ -59,12 +59,10 @@ final class LaravelScrapingBee
 
         if ($method === 'POST') {
 
-            // Saw this in the docs but not sure if it is needed. Commenting it for now
-            // If anyone using scrapingbee with POST URLs let me know if this is required.
-
-            // $http->withHeaders([
-            //     'Content-Type' => 'application/x-www-form-urlencoded; charset=utf-8',
-            // ]);
+            // If user never specify content type we use the 1 provided in the official docs.
+            $http->withHeaders([
+                'Content-Type' => $postContentType,
+            ]);
 
             $response = $http->post($this->baseUrl . '?' . http_build_query($this->params), $data);
         } else {
@@ -89,9 +87,9 @@ final class LaravelScrapingBee
     /**
      * Matching it with ScrapingBee Python Library
      */
-    public function post(string $url, array $params = [], array $data = [], array $headers = [], array $cookies = []): Response
+    public function post(string $url, array $params = [], array $data = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
-        return $this->request('POST', $url, $params, $data, $headers, $cookies);
+        return $this->request('POST', $url, $params, $data, $headers, $cookies, $postContentType);
     }
 
     /**
