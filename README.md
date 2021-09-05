@@ -36,13 +36,12 @@ return [
 $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->blockAds()
-    ->premiumProxy()
     ->get('https://www.scrapingbee.com')
-
-// Look at the source code of `src/LaravelScrapingBee.php` for now. Proper Docs will be added later.
-
-// https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php
 ```
+
+Look at the source code of `src/LaravelScrapingBee.php` for now for the other methods (link below). More proper Docs will be added later.
+
+[LaravelScrapingBee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php)
 
 ## Testing
 
