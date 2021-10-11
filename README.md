@@ -45,6 +45,8 @@ Look at the source code of `src/LaravelScrapingBee.php` for now for the other me
 
 ## Testing
 
+As ScrapingBee does not provide any test APIs nor recurring sample API credits. I'm not able to provide any tests. But if there are tests in the future, you can run the command below to execute the testcases.
+
 ```bash
 composer test
 ```
