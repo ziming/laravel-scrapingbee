@@ -192,18 +192,34 @@ final class LaravelScrapingBee
 
         return $this;
     }
-
+    
     /**
      * https://www.scrapingbee.com/documentation/#javascript-scroll
      */
-    public function jsScrollToEndOfScreen(int $jsScrollWaitMs = 1000, int $jsScrollCount = 1): self
+    public function jsScroll()
     {
         $this->params['js_scroll'] = true;
-        $this->params['js_scroll_wait'] = $jsScrollWaitMs;
-        $this->params['js_scroll_count'] = $jsScrollCount;
-
         return $this;
     }
+    
+    /**
+     * https://www.scrapingbee.com/documentation/#javascript-scroll
+     */
+    public function jsScrollWait(int $milliseconds)
+    {
+        $this->params['js_scroll_wait'] = $milliseconds;
+        return $this;
+    }
+    
+    /**
+     * https://www.scrapingbee.com/documentation/#javascript-scroll
+     */
+    public function jsScrollCount(int $count)
+    {
+        $this->params['js_scroll_count'] = $count;
+        return $this;
+    }
+    
 
     /**
      * https://www.scrapingbee.com/documentation/#premium-proxy
