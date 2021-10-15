@@ -87,7 +87,7 @@ final class LaravelScrapingBee
     /**
      * Matching it with ScrapingBee Python Library
      */
-    public function post(string $url, array $params = [], array $data = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
+    public function post(string $url, array $data = [], array $params = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         return $this->request('POST', $url, $params, $data, $headers, $cookies, $postContentType);
     }
