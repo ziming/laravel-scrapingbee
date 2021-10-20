@@ -324,6 +324,7 @@ final class LaravelScrapingBee
     public function addParams(array $params): self
     {
         $this->params = array_merge_recursive($this->params, $params);
+
         return $this;
     }
 
