@@ -34,22 +34,10 @@ final class LaravelScrapingBee
     /**
      * Matching it with ScrapingBee Python Library
      */
-    private function request(string $method, string $url, array $params = [], array $data = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
+    private function request(string $method, string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         if ($url) {
             $this->setUrl($url);
-        }
-
-        if ($params) {
-            $this->params = array_merge_recursive($this->params, $params);
-        }
-
-        if ($headers) {
-            $this->setHeaders($headers);
-        }
-
-        if ($cookies) {
-            $this->setCustomCookies($cookies);
         }
 
         $this->params['api_key'] = $this->apiKey;
@@ -77,25 +65,25 @@ final class LaravelScrapingBee
     }
 
     /**
-     * Matching it with ScrapingBee Python Library
+     * Partially Matching it with ScrapingBee Python Library Partially
      */
-    public function get(string $url, array $params = [], array $headers = [], array $cookies = []): Response
+    public function get(string $url): Response
     {
-        return $this->request('GET', $url, $params, [], $headers, $cookies);
+        return $this->request('GET', $url);
     }
 
     /**
-     * Matching it with ScrapingBee Python Library
+     * Matching it with ScrapingBee Python Library Partially
      */
-    public function post(string $url, array $data = [], array $params = [], array $headers = [], array $cookies = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
+    public function post(string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
-        return $this->request('POST', $url, $params, $data, $headers, $cookies, $postContentType);
+        return $this->request('POST', $url, $data, $postContentType);
     }
 
     /**
      * https://www.scrapingbee.com/documentation/#encoding-url
      */
-    public function setUrl(string $url): self
+    private function setUrl(string $url): self
     {
         // urlencode make things fail somehow. Maybe urlencode is run at the Http::get() / Http::post() level
         $this->params['url'] = $url;
@@ -328,6 +316,14 @@ final class LaravelScrapingBee
         $this->params = $params;
 
         return $this;
+    }
+
+    /*
+     * Just in case there are new params that are not covered by the convenience params methods
+     */
+    public function addParams(array $params): self
+    {
+        $this->params = array_merge_recursive($this->params, $params);
     }
 
     public function setHeaders(array $headers): self
