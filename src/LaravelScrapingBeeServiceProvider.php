@@ -18,4 +18,9 @@ class LaravelScrapingBeeServiceProvider extends PackageServiceProvider
             ->name('laravel-scrapingbee')
             ->hasConfigFile();
     }
+
+    public function packageRegistered(): void
+    {
+        $this->app->bind('laravel-scrapingbee', LaravelScrapingBee::class);
+    }
 }
