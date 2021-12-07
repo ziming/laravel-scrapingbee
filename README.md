@@ -39,7 +39,7 @@ $response = $scrapingBeeClient->blockAds()
     ->get('https://www.scrapingbee.com')
 ```
 
-Look at the source code of `src/LaravelScrapingBee.php` for now for the other methods (link below). More proper Docs will be added later.
+Look at the source code of `src/LaravelScrapingBee.php` for the other methods (link below). More proper documentation will be added later. Methods that return `$this` are chainable. An example is the `blockAds()` method you saw above.
 
 [LaravelScrapingBee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php)
 
