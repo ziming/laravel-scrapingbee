@@ -85,7 +85,8 @@ final class LaravelScrapingBee
      */
     private function setUrl(string $url): self
     {
-        // urlencode make things fail somehow. Maybe urlencode is run at the Http::get() / Http::post() level
+        // urlencode($url) make things fail somehow.
+        // My guess is urlencode is run at the Http::get() / Http::post() level already
         $this->params['url'] = $url;
 
         return $this;
@@ -227,6 +228,16 @@ final class LaravelScrapingBee
     public function disableJs(): self
     {
         $this->params['render_js'] = false;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#javascript-execution
+     */
+    public function jsScenario(array $instructions): self
+    {
+        $this->params['js_scenario'] = json_encode($instructions);
 
         return $this;
     }
