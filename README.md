@@ -36,12 +36,15 @@ return [
 $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->blockAds()
+    ->jsonResponse()
     ->get('https://www.scrapingbee.com')
 ```
 
 Look at the source code of `src/LaravelScrapingBee.php` for the other methods (link below). More proper documentation will be added later. Methods that return `$this` are chainable. An example is the `blockAds()` method you saw above. Meanwhile methods such as `get()`, `post()`, `usageStatistics()` returns you an `Illuminate\Http\Client\Response` object if no exceptions are thrown.
 
 [LaravelScrapingBee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php)
+
+If for some reason you prefer to set all parameters at once you may wish to use the `setParams() or addParams()` method. Take note that these methods simply takes in an array and sets the parameters as is. So for the methods that does something extra before setting the parameter you would have to do them yourselves now if you chose this path.
 
 ## Testing
 
