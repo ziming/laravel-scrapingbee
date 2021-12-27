@@ -237,7 +237,9 @@ final class LaravelScrapingBee
      */
     public function jsScenario(array $instructions): self
     {
-        $this->params['js_scenario'] = json_encode($instructions);
+        $this->params['js_scenario'] = json_encode([
+            'instructions' => $instructions,
+        ]);
 
         return $this;
     }

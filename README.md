@@ -37,7 +37,15 @@ $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->blockAds()
     ->jsonResponse()
-    ->get('https://www.scrapingbee.com')
+    ->jsScenario([
+        ['click' => '#button_id'],
+        ['wait' => 1000],
+        ['wait_for' => '#slow_div'],
+        ['scroll_x' => 1000],
+        ['scroll_y' => 1000],
+        ['fill' => ['#input_1','value_1']],
+        ['evaluate' => 'console.log(window);'],
+])->get('https://www.scrapingbee.com')
 ```
 
 Look at the source code of `src/LaravelScrapingBee.php` for the other methods (link below). More proper documentation will be added later. Methods that return `$this` are chainable. An example is the `blockAds()` method you saw above. Meanwhile methods such as `get()`, `post()`, `usageStatistics()` returns you an `Illuminate\Http\Client\Response` object if no exceptions are thrown.
@@ -46,6 +54,27 @@ Look at the source code of `src/LaravelScrapingBee.php` for the other methods (l
 
 If for some reason you prefer to set all parameters at once you may wish to use the `setParams() or addParams()` method. Take note that these methods simply takes in an array and sets the parameters as is. So for the methods that does something extra before setting the parameter you would have to do them yourselves now if you chose this path.
 
+An example is shown below:
+
+```php
+$scrapingBeeClient = Ziming\LaravelScrapingBee::make();
+
+$response = $scrapingBeeClient->setParams([
+        'js_scenario' => json_encode([
+            'instructions' => [
+                ['click' => '#button_id'],
+                ['wait' => 1000],
+                ['wait_for' => '#slow_div'],
+                ['scroll_x' => 1000],
+                ['scroll_y' => 1000],
+                ['fill' => ['#input_1','value_1']],
+                ['evaluate' => 'console.log(window);']
+            ]
+        ]),
+        'block_ads' => true,
+        'json_response' => true,
+    ])->get('https://www.scrapingbee.com')
+```
 ## Testing
 
 As ScrapingBee does not provide any test APIs nor recurring sample API credits. I'm not able to provide any tests. But if there are tests in the future, you can run the command below to execute the testcases.
