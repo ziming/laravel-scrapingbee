@@ -154,6 +154,7 @@ final class LaravelScrapingBee
 
     /**
      * https://www.scrapingbee.com/documentation/#json_css
+     * https://www.scrapingbee.com/documentation/data-extraction/
      */
     public function extractDataFromCssRules(array $cssRules): self
     {
@@ -234,6 +235,7 @@ final class LaravelScrapingBee
 
     /**
      * https://www.scrapingbee.com/documentation/#javascript-execution
+     * https://www.scrapingbee.com/documentation/js-scenario/
      */
     public function jsScenario(array $instructions): self
     {
