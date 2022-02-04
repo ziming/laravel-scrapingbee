@@ -158,7 +158,7 @@ final class LaravelScrapingBee
      */
     public function extractDataFromCssRules(array $cssRules): self
     {
-        $this->params['extract_rules'] = json_encode($cssRules);
+        $this->params['extract_rules'] = json_encode($cssRules, JSON_THROW_ON_ERROR);
 
         return $this;
     }
@@ -241,7 +241,7 @@ final class LaravelScrapingBee
     {
         $this->params['js_scenario'] = json_encode([
             'instructions' => $instructions,
-        ]);
+        ], JSON_THROW_ON_ERROR);
 
         return $this;
     }
@@ -346,9 +346,7 @@ final class LaravelScrapingBee
     public function setHeaders(array $headers): self
     {
         $this->headers = array_combine(
-            array_map(function ($key) {
-                return 'Spb-'. $key;
-            }, array_keys($headers)),
+            array_map(fn($key) => 'Spb-'. $key, array_keys($headers)),
             $headers
         );
 
