@@ -346,7 +346,7 @@ final class LaravelScrapingBee
     public function setHeaders(array $headers): self
     {
         $this->headers = array_combine(
-            array_map(fn($key) => 'Spb-'. $key, array_keys($headers)),
+            array_map(fn ($key) => 'Spb-'. $key, array_keys($headers)),
             $headers
         );
 
