@@ -31,17 +31,14 @@ final class LaravelScrapingBee
         );
     }
 
-    /**
-     * Matching it with ScrapingBee Python Library
-     */
     private function request(string $method, string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
-        if ($url) {
-            $this->setUrl($url);
-        }
+        // https://www.scrapingbee.com/documentation/#encoding-url
+        // urlencode($url) make things fail somehow.
+        // My guess is urlencode is run at the Http::get() / Http::post() level already
+        $this->params['url'] = $url;
 
         $this->params['api_key'] = $this->apiKey;
-
 
         $http = Http::withHeaders($this->headers);
 
@@ -64,32 +61,14 @@ final class LaravelScrapingBee
         return $response;
     }
 
-    /**
-     * Partially Matching it with ScrapingBee Python Library Partially
-     */
     public function get(string $url): Response
     {
         return $this->request('GET', $url);
     }
 
-    /**
-     * Matching it with ScrapingBee Python Library Partially
-     */
     public function post(string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         return $this->request('POST', $url, $data, $postContentType);
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/#encoding-url
-     */
-    private function setUrl(string $url): self
-    {
-        // urlencode($url) make things fail somehow.
-        // My guess is urlencode is run at the Http::get() / Http::post() level already
-        $this->params['url'] = $url;
-
-        return $this;
     }
 
     /**
