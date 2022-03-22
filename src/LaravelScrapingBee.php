@@ -7,23 +7,25 @@ use Illuminate\Support\Facades\Http;
 
 final class LaravelScrapingBee
 {
-    protected string $baseUrl;
-    protected string $apiKey;
+    private readonly string $baseUrl;
+    private readonly string $apiKey;
+    private readonly int $timeout;
 
-    protected array $params = [];
-    protected array $headers = [];
+    private array $params = [];
+    private array $headers = [];
 
-    public static function make(?string $apiKey = null): self
+    public static function make(?string $apiKey = null, int $timeout = 60): self
     {
-        return new static($apiKey);
+        return new static($apiKey, $timeout);
     }
 
-    public function __construct(?string $apiKey = null)
+    public function __construct(?string $apiKey = null, int $timeout = 60)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
         // If $apiKey is null, then we use the 1 in the config file.
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
+        $this->timeout = $timeout ?? config('scrapingbee.timeout');
 
         $this->baseUrl = config(
             'scrapingbee.base_url',
@@ -40,7 +42,7 @@ final class LaravelScrapingBee
 
         $this->params['api_key'] = $this->apiKey;
 
-        $http = Http::withHeaders($this->headers);
+        $http = Http::withHeaders($this->headers)->timeout($this->timeout);
 
         if ($method === 'POST') {
 
