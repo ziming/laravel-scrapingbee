@@ -14,12 +14,12 @@ final class LaravelScrapingBee
     private array $params = [];
     private array $headers = [];
 
-    public static function make(?string $apiKey = null, int $timeout = 60): self
+    public static function make(?string $apiKey = null, int $timeout = 120): self
     {
         return new static($apiKey, $timeout);
     }
 
-    public function __construct(?string $apiKey = null, int $timeout = 60)
+    public function __construct(?string $apiKey = null, int $timeout = 120)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
