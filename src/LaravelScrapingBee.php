@@ -248,7 +248,17 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#screenshot
+     * https://www.scrapingbee.com/documentation/#screenshot_selector
+     */
+    public function screenshotSelector(string $selector): self
+    {
+        $this->params['screenshot_selector'] = true;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#screenshot_full_page
      */
     public function screenshotFullPage(): self
     {
@@ -303,6 +313,16 @@ final class LaravelScrapingBee
     public function windowHeight(int $windowHeight): self
     {
         $this->params['window_height'] = $windowHeight;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/data-extraction/#output
+     */
+    public function output(string $output): self
+    {
+        $this->params['output'] = $output;
 
         return $this;
     }
