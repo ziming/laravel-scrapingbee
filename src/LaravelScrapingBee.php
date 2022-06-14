@@ -205,6 +205,26 @@ final class LaravelScrapingBee
     }
 
     /**
+     * https://www.scrapingbee.com/documentation/#stealth_proxy
+     */
+    public function stealthProxy(): self
+    {
+        $this->params['stealth_proxy'] = true;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#own_proxy
+     */
+    public function ownProxy(string $proxy): self
+    {
+        $this->params['own_proxy'] = $proxy;
+
+        return $this;
+    }
+
+    /**
      * https://www.scrapingbee.com/documentation/#javascript-rendering
      */
     public function disableJs(): self
