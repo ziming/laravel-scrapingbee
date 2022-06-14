@@ -376,6 +376,14 @@ final class LaravelScrapingBee
         return $this;
     }
 
+    public function pureHeadersForwarding(): self
+    {
+        $this->params['forward_headers_pure'] = true;
+        unset($this->params['forward_headers']);
+
+        return $this;
+    }
+
     private function reset(): self
     {
         $this->params = [];
