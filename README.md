@@ -49,7 +49,7 @@ $response = $scrapingBeeClient->blockAds()
 ])->get('https://www.scrapingbee.com')
 ```
 
-Look at the source code of `src/LaravelScrapingBee.php` for the other methods (link below). More proper documentation will be added later. Methods that return `$this` are chainable. An example is the `blockAds()` method you saw above. Meanwhile methods such as `get()`, `post()`, `usageStatistics()` returns you an `Illuminate\Http\Client\Response` object if no exceptions are thrown.
+Look at the source code of `src/LaravelScrapingBee.php` for the other methods (link below). Methods that return `$this` are chainable. An example is the `blockAds()` method you saw above. Meanwhile methods such as `get()`, `post()`, `usageStatistics()` returns you an `Illuminate\Http\Client\Response` object if no exceptions are thrown.
 
 [LaravelScrapingBee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBee.php)
 
