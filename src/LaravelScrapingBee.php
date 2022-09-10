@@ -258,6 +258,16 @@ final class LaravelScrapingBee
     }
 
     /**
+     * https://www.scrapingbee.com/documentation/#session_id
+     */
+    public function session(int $id): self
+    {
+        $this->params['session_id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * https://www.scrapingbee.com/documentation/#screenshot
      */
     public function screenshot(): self
