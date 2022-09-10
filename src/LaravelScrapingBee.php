@@ -16,7 +16,7 @@ final class LaravelScrapingBee
 
     public static function make(?string $apiKey = null, ?int $timeout = null): self
     {
-        return new static($apiKey, $timeout);
+        return new self($apiKey, $timeout);
     }
 
     public function __construct(?string $apiKey = null, ?int $timeout = null)

@@ -8,16 +8,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelScrapingBeeServiceProvider extends PackageServiceProvider
 {
-    public function boot()
-    {
-        parent::boot();
-
-        // Add initial scrapingbee http macro still exploring, not using it yet
-        Http::macro('scrapingbee', function () {
-            return Http::baseUrl(config('scrapingbee.base_url'));
-        });
-    }
-
     public function configurePackage(Package $package): void
     {
         /*
