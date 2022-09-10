@@ -45,7 +45,6 @@ final class LaravelScrapingBee
         $http = Http::withHeaders($this->headers)->timeout($this->timeout);
 
         if ($method === 'POST') {
-
             // If user never specify content type we use the 1 provided in the official docs.
             $http->withHeaders([
                 'Content-Type' => $postContentType,
