@@ -2,7 +2,6 @@
 
 namespace Ziming\LaravelScrapingBee;
 
-use Illuminate\Support\Facades\Http;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
