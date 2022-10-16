@@ -267,6 +267,16 @@ final class LaravelScrapingBee
     }
 
     /**
+     * https://www.scrapingbee.com/documentation/#timeout
+     */
+    public function timeout(int $milliseconds): self
+    {
+        $this->params['timeout'] = $milliseconds;
+
+        return $this;
+    }
+
+    /**
      * https://www.scrapingbee.com/documentation/#screenshot
      */
     public function screenshot(): self
