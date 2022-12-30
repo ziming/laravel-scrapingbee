@@ -8,6 +8,8 @@
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
+Note: I no longer have an active subscription to scrapingbee, so you would have to help me test it.
+
 ## Installation
 
 You can install the package via composer:
