@@ -35,6 +35,8 @@ return [
 
 ## Usage
 
+### The Generic ScrapingBee Client
+
 ```php
 $scrapingBeeClient = Ziming\LaravelScrapingBee::make();
 
@@ -60,7 +62,7 @@ If for some reason you prefer to set all parameters at once you may wish to use 
 An example is shown below:
 
 ```php
-$scrapingBeeClient = Ziming\LaravelScrapingBee::make();
+$scrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->setParams([
         'js_scenario' => json_encode([
@@ -78,6 +80,24 @@ $response = $scrapingBeeClient->setParams([
         'json_response' => true,
     ])->get('https://www.scrapingbee.com')
 ```
+
+### The Google Search ScrapingBee Client
+
+This is experimental and not tested. Feel free to let me know how it goes.
+
+My API design for this class is not stable yet and might change in future major releases.
+
+```php
+$googleSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeGoogleSearch::make();
+
+$response = $googleSearchScrapingBeeClient
+    ->nbResults(8)
+    ->page(1)
+    ->search('scrapingbee')
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the other methods.
+
 ## Testing
 
 As ScrapingBee does not provide any test APIs nor recurring sample API credits. I'm not able to provide any tests. But if there are tests in the future, you can run the command below to execute the testcases.
