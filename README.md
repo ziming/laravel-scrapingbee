@@ -8,7 +8,7 @@
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
-Note: I no longer have an active subscription to Scrapingbee, neither did Scrapingbee reply to my request of some tiny amounts of free monthly test credits. While I would still continue to maintain and upgrade this package, you would have to help me test it.
+Note: I no longer have an active subscription to Scrapingbee, neither did Scrapingbee reply to my request for some tiny amounts of free monthly test credits. While I would still continue to maintain and upgrade this package, you would have to help me test it.
 
 ## Installation
 
