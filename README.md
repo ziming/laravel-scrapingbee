@@ -96,7 +96,7 @@ $response = $googleSearchScrapingBeeClient
 ```
 Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the other methods (link below).
 
-[LaravelScrapingBee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGoogleSearch.php)
+[LaravelScrapingBeeGoogleSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGoogleSearch.php)
 
 ## Testing
 
