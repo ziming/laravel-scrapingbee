@@ -20,7 +20,7 @@
         "illuminate/contracts": "^9.0||^10.0"
     },
     "require-dev": {
-        "brianium/paratest": "^7.0",
+        "brianium/paratest": "^6.0|^7.0",
         "nunomaduro/collision": "^6.3||^7.0",
         "orchestra/testbench": "^7.7||^8.0",
         "phpunit/phpunit": "^9.5.24||^10.0",
