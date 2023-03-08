@@ -36,7 +36,7 @@ return [
 ### The Generic ScrapingBee Client
 
 ```php
-$scrapingBeeClient = Ziming\LaravelScrapingBee::make();
+$scrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->blockAds()
     ->jsonResponse()
