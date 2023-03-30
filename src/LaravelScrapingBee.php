@@ -237,9 +237,10 @@ final class LaravelScrapingBee
      * https://www.scrapingbee.com/documentation/#javascript-execution
      * https://www.scrapingbee.com/documentation/js-scenario/
      */
-    public function jsScenario(array $instructions): self
+    public function jsScenario(array $instructions, bool $strict = true): self
     {
         $this->params['js_scenario'] = json_encode([
+            'strict' => $strict,
             'instructions' => $instructions,
         ], JSON_THROW_ON_ERROR);
 
@@ -332,6 +333,16 @@ final class LaravelScrapingBee
     public function waitForCssSelector(string $cssSelector): self
     {
         $this->params['wait_for'] = $cssSelector;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#wait_browser
+     */
+    public function waitForBrowser(string $networkCondition = 'domcontentloaded'): self
+    {
+        $this->params['wait_browser'] = $networkCondition;
 
         return $this;
     }
