@@ -12,7 +12,7 @@ use Illuminate\Support\Traits\Conditionable;
 final class LaravelScrapingBeeGoogleSearch
 {
     use Conditionable;
-    
+
     private readonly string $baseUrl;
     private readonly string $apiKey;
 
