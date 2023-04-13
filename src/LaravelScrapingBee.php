@@ -4,9 +4,12 @@ namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Traits\Conditionable;
 
 final class LaravelScrapingBee
 {
+    use Conditionable;
+
     private readonly string $baseUrl;
     private readonly string $apiKey;
     private readonly int $timeout;

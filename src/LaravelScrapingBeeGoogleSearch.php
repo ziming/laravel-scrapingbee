@@ -4,12 +4,15 @@ namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Traits\Conditionable;
 
 /**
  * @experimental
  */
 final class LaravelScrapingBeeGoogleSearch
 {
+    use Conditionable;
+    
     private readonly string $baseUrl;
     private readonly string $apiKey;
 
