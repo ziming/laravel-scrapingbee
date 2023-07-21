@@ -39,6 +39,10 @@ return [
 $scrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBee::make();
 
 $response = $scrapingBeeClient->blockAds()
+    ->when(now()->weekOfMonth === 4, function (LaravelScrapingBee $scrapingBeeClient): LaravelScrapingBee {
+        // if it is last week of the month, spam premium proxy to use up credits!
+        return $scrapingBeeClient->premiumProxy();
+    })
     ->jsonResponse()
     ->jsScenario([
         ['click' => '#button_id'],
