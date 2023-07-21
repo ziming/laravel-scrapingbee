@@ -380,6 +380,19 @@ final class LaravelScrapingBee
         return $this;
     }
 
+    /*
+     * This is for the situation if our API did not catch up and you want to add a new parameter
+     * that Scrapingbee supports
+     * like ->setParam('stealth_proxy', true) for example
+     * stealth proxy feature is in beta and hence I have not add a dedicated method to support it yet
+     */
+    public function setParam(string $key, mixed $value): self
+    {
+        $this->params[$key] = $value;
+
+        return $this;
+    }
+
     public function setParams(array $params): self
     {
         $this->params = $params;
