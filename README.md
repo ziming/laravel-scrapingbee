@@ -85,9 +85,7 @@ $response = $scrapingBeeClient->setParams([
 
 ### The Google Search ScrapingBee Client
 
-This is experimental and not tested. Feel free to let me know how it goes.
-
-My API design for this class is not stable yet and might change in future major releases.
+This class is never tested by me. Feel free to let me know how it goes.
 
 ```php
 $googleSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeGoogleSearch::make();
@@ -104,7 +102,7 @@ Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the othe
 
 ## Testing
 
-As ScrapingBee does not provide any test APIs nor recurring sample API credits. I'm not able to provide any tests. But if there are tests in the future, you can run the command below to execute the testcases.
+Currently there are no tests. But if there are tests in the future, you can run the command below to execute the testcases.
 
 ```bash
 composer test
@@ -112,7 +110,7 @@ composer test
 
 ## Contributing
 
-1 way to contribute is to donate to me but that has never happened so far. The other alternative is to use my referral link to [Scrapingbee](https://www.scrapingbee.com?fpr=php-laravel) & be a paying customer, which till now has not happened either.
+1 way to contribute is to donate. The other alternative is to use my referral link to [Scrapingbee](https://www.scrapingbee.com?fpr=php-laravel) & be a paying customer
 
 As for contributing to this codebase, please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
