@@ -56,6 +56,16 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
+     * https://www.scrapingbee.com/documentation/google/#search_type
+     */
+    public function searchType(string $type): self
+    {
+        $this->params['search_type'] = $type;
+
+        return $this;
+    }
+
+    /**
      * https://www.scrapingbee.com/documentation/google/#country_code
      */
     public function countryCode(string $countryCode): self
@@ -111,6 +121,17 @@ final class LaravelScrapingBeeGoogleSearch
     public function addHtml(): self
     {
         $this->params['add_html'] = true;
+
+        return $this;
+    }
+
+    /*
+     * If the API hasn't caught up and you need to support a new ScrapingBee parameter,
+     * you can set it using this method.
+     */
+    public function setParam(string $key, mixed $value): self
+    {
+        $this->params[$key] = $value;
 
         return $this;
     }
