@@ -1,14 +1,12 @@
 # A PHP Laravel Library for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ziming/laravel-scrapingbee.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-scrapingbee)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ziming/laravel-scrapingbee/run-tests?label=tests)](https://github.com/ziming/laravel-scrapingbee/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ziming/laravel-scrapingbee/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ziming/laravel-scrapingbee/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-scrapingbee.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-scrapingbee)
 [![RINGER](https://www.ringerhq.com/images/get-support-on-ringer.svg)](https://www.ringerhq.com/i/ziming/laravel-scrapingbee)
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
-If you wanted to support my work you can use my referral link to be a paid customer of [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
+If you wanted to support my work you can use my [referral link to be a paid customer of ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
 ## Installation
 
