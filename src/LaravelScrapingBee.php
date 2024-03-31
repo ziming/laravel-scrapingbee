@@ -169,7 +169,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#javascript-scroll
      */
-    public function jsScroll()
+    public function jsScroll(): self
     {
         $this->params['js_scroll'] = true;
 
@@ -179,7 +179,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#javascript-scroll
      */
-    public function jsScrollWait(int $milliseconds)
+    public function jsScrollWait(int $milliseconds): self
     {
         $this->params['js_scroll_wait'] = $milliseconds;
 
@@ -189,7 +189,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#javascript-scroll
      */
-    public function jsScrollCount(int $count)
+    public function jsScrollCount(int $count): self
     {
         $this->params['js_scroll_count'] = $count;
 
