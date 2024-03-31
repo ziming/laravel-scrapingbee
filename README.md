@@ -8,6 +8,8 @@
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
+If you wanted to support my work you can use my referral link to be a paid customer of [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
+
 ## Installation
 
 You can install the package via composer:
@@ -85,8 +87,6 @@ $response = $scrapingBeeClient->setParams([
 
 ### The Google Search ScrapingBee Client
 
-This class is never tested by me. Feel free to let me know how it goes.
-
 ```php
 $googleSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeGoogleSearch::make();
 
@@ -102,7 +102,7 @@ Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the othe
 
 ## Testing
 
-Currently there are no tests. But if there are tests in the future, you can run the command below to execute the testcases.
+Currently, there are no tests. But if there are tests in the future, you can run the command below to execute the testcases.
 
 ```bash
 composer test
