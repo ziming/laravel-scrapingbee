@@ -29,8 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ziming\\LaravelScrapingBee\\": "src",
-            "Ziming\\LaravelScrapingBee\\Database\\Factories\\": "database/factories"
+            "Ziming\\LaravelScrapingBee\\": "src"
         }
     },
     "autoload-dev": {

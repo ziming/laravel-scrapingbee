@@ -6,9 +6,6 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
 
-/**
- * @experimental
- */
 final class LaravelScrapingBeeGoogleSearch
 {
     use Conditionable;
