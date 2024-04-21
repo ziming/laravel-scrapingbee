@@ -115,7 +115,6 @@ composer test
 Alternatively, I have a few other referral links you can use:
 
 - [Cut your AWS costs by about 60% with Pump for free. My referral link gives you $250 too](https://www.pump.co/?ref=900831)
-- [Humble Choice Monthly Games](https://www.humblebundle.com/membership?refc=vOZEog)
 
 As for contributing to this codebase, please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
