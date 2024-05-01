@@ -6,9 +6,9 @@
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
-If you wanted to support my work you can use my [referral link to create an account & paid customer of ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel). 
+If you wanted to support my work you can use my [referral link to create an account & be a paid customer of ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel). 
 
-Alternatively there can refer to [Contributing](#Contributing) Section below for other ways to support me.
+Alternatively you can also refer to the [Contributing](#Contributing) Section below for other ways to support me.
 
 ## Installation
 
@@ -112,9 +112,10 @@ composer test
 
 1 way to contribute is to donate. The other alternative is to use my referral link to [Scrapingbee](https://www.scrapingbee.com?fpr=php-laravel), create an account & be a paying customer
 
-Alternatively, I have a few other referral links you can use:
+Alternatively, I have a few other referral links you can use where we both benefit:
 
 - [Cut your AWS costs by about 60% with Pump for free. My referral link gives you $250 too](https://www.pump.co/?ref=900831)
+- [Dropbox extra 500 MB for new account](https://www.dropbox.com/referrals/AADDLjGkSH_QFLodOUiOnU4tiqigvGZmLR0)
 
 As for contributing to this codebase, please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
