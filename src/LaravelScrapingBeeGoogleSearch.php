@@ -15,12 +15,12 @@ final class LaravelScrapingBeeGoogleSearch
 
     private array $params = [];
 
-    public static function make(?string $apiKey = null): self
+    public static function make(#[\SensitiveParameter] ?string $apiKey = null): self
     {
         return new self($apiKey);
     }
 
-    public function __construct(?string $apiKey = null, ?int $timeout = null)
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.

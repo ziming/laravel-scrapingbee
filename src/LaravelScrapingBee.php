@@ -2,6 +2,7 @@
 
 namespace Ziming\LaravelScrapingBee;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
@@ -17,12 +18,12 @@ final class LaravelScrapingBee
     private array $params = [];
     private array $headers = [];
 
-    public static function make(?string $apiKey = null, ?int $timeout = null): self
+    public static function make(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null): self
     {
         return new self($apiKey, $timeout);
     }
 
-    public function __construct(?string $apiKey = null, ?int $timeout = null)
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
@@ -36,6 +37,9 @@ final class LaravelScrapingBee
         );
     }
 
+    /**
+     * @throws ConnectionException
+     */
     private function request(string $method, string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         // https://www.scrapingbee.com/documentation/#encoding-url
