@@ -69,11 +69,17 @@ final class LaravelScrapingBee
         return $response;
     }
 
+    /**
+     * @throws ConnectionException
+     */
     public function get(string $url): Response
     {
         return $this->request('GET', $url);
     }
 
+    /**
+     * @throws ConnectionException
+     */
     public function post(string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
     {
         return $this->request('POST', $url, $data, $postContentType);
@@ -142,10 +148,28 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#json_css
      * https://www.scrapingbee.com/documentation/data-extraction/
+     * @throws \JsonException
      */
     public function extractDataFromCssRules(array $cssRules): self
     {
         $this->params['extract_rules'] = json_encode($cssRules, JSON_THROW_ON_ERROR);
+
+        return $this;
+    }
+
+    /*
+     * https://www.scrapingbee.com/documentation/#ai_query
+     * https://www.scrapingbee.com/documentation/#ai_selector
+     *
+     * There is no aiSelector() method since it need to be used with aiQuery
+     */
+    public function aiQuery(string $query, ?string $selector = null): self
+    {
+        $this->params['ai_query'] = $query;
+
+        if ($selector !== null) {
+            $this->params['ai_selector'] = $selector;
+        }
 
         return $this;
     }
@@ -387,8 +411,7 @@ final class LaravelScrapingBee
     /*
      * This is for the situation if our API did not catch up and you want to add a new parameter
      * that Scrapingbee supports
-     * like ->setParam('stealth_proxy', true) for example
-     * stealth proxy feature is in beta and hence I have not add a dedicated method to support it yet
+     * like ->setParam('new_beta_feature', true) for example
      */
     public function setParam(string $key, mixed $value): self
     {

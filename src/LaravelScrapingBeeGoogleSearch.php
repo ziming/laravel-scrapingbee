@@ -20,7 +20,7 @@ final class LaravelScrapingBeeGoogleSearch
         return new self($apiKey);
     }
 
-    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
