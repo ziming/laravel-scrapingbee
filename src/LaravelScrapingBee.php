@@ -6,6 +6,7 @@ use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
+use JsonException;
 
 final class LaravelScrapingBee
 {
@@ -148,7 +149,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#json_css
      * https://www.scrapingbee.com/documentation/data-extraction/
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function extractDataFromCssRules(array $cssRules): self
     {
@@ -166,6 +167,22 @@ final class LaravelScrapingBee
     public function aiQuery(string $query, ?string $selector = null): self
     {
         $this->params['ai_query'] = $query;
+
+        if ($selector !== null) {
+            $this->params['ai_selector'] = $selector;
+        }
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#ai_extract_rules
+     * https://www.scrapingbee.com/documentation/#ai_selector
+     * @throws JsonException
+     */
+    public function aiExtractRules(array $rules, ?string $selector = null): self
+    {
+        $this->params['ai_extract_rules'] = json_encode($rules, JSON_THROW_ON_ERROR);
 
         if ($selector !== null) {
             $this->params['ai_selector'] = $selector;
@@ -267,6 +284,7 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#javascript-execution
      * https://www.scrapingbee.com/documentation/js-scenario/
+     * @throws JsonException
      */
     public function jsScenario(array $instructions, bool $strict = true): self
     {
