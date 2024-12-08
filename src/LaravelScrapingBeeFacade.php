@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Support\Facades\Facade;
