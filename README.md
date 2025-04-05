@@ -43,6 +43,8 @@ $response = $scrapingBeeClient->blockAds()
         return $scrapingBeeClient->premiumProxy();
     })
     ->jsonResponse()
+    //->aiQuery('top 5 blog posts') // AI Query Feature!
+    //->aiExtractRules(['title' => 'title of post', 'summary' => 'summary of post']) // AI Extract Feature!
     ->jsScenario([
         ['click' => '#button_id'],
         ['wait' => 1000],
