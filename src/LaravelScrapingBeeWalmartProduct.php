@@ -66,7 +66,6 @@ final class LaravelScrapingBeeWalmartProduct
         return $this;
     }
 
-
     /**
      * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPIProduct
      */
