@@ -175,7 +175,6 @@ final class LaravelScrapingBeeWalmartSearch
         return $this;
     }
 
-
     /**
      * https://www.scrapingbee.com/documentation/google/#extra_params
      */
