@@ -99,6 +99,21 @@ Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the othe
 
 [LaravelScrapingBeeGoogleSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGoogleSearch.php)
 
+### The Walmart Search ScrapingBee Client
+
+```php
+$walmartSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeWalmartSearch::make();
+
+$response = $walmartSearchScrapingBeeClient
+    ->query('iPhone')
+    ->minPrice(100)
+    ->maxPrice(1000)
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeWalmartSearch.php` for the other methods (link below).
+
+[LaravelScrapingBeeWalmartSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartSearch.php)
+
 ## Testing
 
 Currently, there are no tests. But if there are tests in the future, you can run the command below to execute the testcases.
