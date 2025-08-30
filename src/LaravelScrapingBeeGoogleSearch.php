@@ -84,7 +84,6 @@ final class LaravelScrapingBeeGoogleSearch
         return $this;
     }
 
-
     /**
      * https://www.scrapingbee.com/documentation/google/#nb_results
      */
