@@ -107,7 +107,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#custom-cookies
+     * https://www.scrapingbee.com/documentation/#cookies
      */
     public function setCustomCookies(array $cookies): self
     {
@@ -197,6 +197,23 @@ final class LaravelScrapingBee
     public function jsonResponse(): self
     {
         $this->params['json_response'] = true;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/#return_page_source
+     */
+    public function returnPageSource(): self
+    {
+        $this->params['return_page_source'] = true;
+
+        return $this;
+    }
+
+    public function scrapingConfig(string $configName): self
+    {
+        $this->params['scraping_config'] = $configName;
 
         return $this;
     }
