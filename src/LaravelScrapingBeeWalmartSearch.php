@@ -168,13 +168,6 @@ final class LaravelScrapingBeeWalmartSearch
         return $this;
     }
 
-    public function addHtml(): self
-    {
-        $this->params['add_html'] = true;
-
-        return $this;
-    }
-
     /**
      * https://www.scrapingbee.com/documentation/google/#extra_params
      */
