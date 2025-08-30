@@ -7,7 +7,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
 
-final class LaravelScrapingBeeGoogleSearch
+final class LaravelScrapingBeeWalmartProduct
 {
     use Conditionable;
 
@@ -29,8 +29,8 @@ final class LaravelScrapingBeeGoogleSearch
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
 
         $this->baseUrl = config(
-            'scrapingbee.google_search_base_url',
-            'https://app.scrapingbee.com/api/v1/store/google'
+            'scrapingbee.walmart_product_base_url',
+            'https://app.scrapingbee.com/api/v1/walmart/product'
         );
     }
 
@@ -47,77 +47,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#search
-     */
-    public function search(string $query): self
-    {
-        $this->params['search'] = $query;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#search_type
-     */
-    public function searchType(string $type): self
-    {
-        $this->params['search_type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#country_code
-     */
-    public function countryCode(string $countryCode): self
-    {
-        $this->params['country_code'] = $countryCode;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#device
-     */
-    public function device(string $device): self
-    {
-        $this->params['device'] = $device;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#nb_results
-     */
-    public function nbResults(int $count): self
-    {
-        $this->params['nb_results'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#page
-     */
-    public function page(int $pageNumber): self
-    {
-        $this->params['page'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#language
-     */
-    public function language(string $language): self
-    {
-        $this->params['language'] = $language;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#light_request
+     * https://www.scrapingbee.com/documentation/walmart/#light_request_WalmartAPIProduct
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -126,9 +56,43 @@ final class LaravelScrapingBeeGoogleSearch
         return $this;
     }
 
-    public function autoCorrection(): self
+    /**
+     * https://www.scrapingbee.com/documentation/walmart/#product_id
+     */
+    public function productId(string $storeId): self
     {
-        $this->params['nfpr'] = true;
+        $this->params['product_id'] = $storeId;
+
+        return $this;
+    }
+
+
+    /**
+     * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPIProduct
+     */
+    public function domain(string $domain): self
+    {
+        $this->params['domain'] = $domain;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/walmart/#delivery_zip_WalmartAPIProduct
+     */
+    public function deliveryZip(string $deliveryZip): self
+    {
+        $this->params['delivery_zip'] = $deliveryZip;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/walmart/#store_id_WalmartAPIProduct
+     */
+    public function storeId(string $storeId): self
+    {
+        $this->params['store_id'] = $storeId;
 
         return $this;
     }
@@ -144,7 +108,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#add_html
+     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPIProduct
      */
     public function addHtml(): self
     {

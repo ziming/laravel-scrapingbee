@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\ConnectionException;
@@ -179,7 +177,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#add_html
+     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPISearch
      */
     public function addHtml(): self
     {

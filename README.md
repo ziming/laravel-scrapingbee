@@ -111,11 +111,34 @@ $response = $walmartSearchScrapingBeeClient
     ->query('iPhone')
     ->minPrice(100)
     ->maxPrice(1000)
+    ->fulfillmentType('in_store')
+    ->fulfillmentSpeed('today')
+    ->domain('walmart.ca')
+    ->sortBy('price_low')
+    ->page(2)
     ->get();
 ```
 Look at the source code of `src/LaravelScrapingBeeWalmartSearch.php` for the other methods (link below).
 
 [LaravelScrapingBeeWalmartSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartSearch.php)
+
+
+### The Walmart Product ScrapingBee Client
+
+```php
+$walmartProductScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeWalmartProduct::make();
+
+$response = $walmartProductScrapingBeeClient
+    ->productId('5491199371')
+    ->domain('walmart.ca')
+    ->deliveryZip('10001')
+    ->storeId('3520')
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeWalmartProduct.php` for the other methods (link below).
+
+[LaravelScrapingBeeWalmartProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartProduct.php)
+
 
 ## Testing
 
