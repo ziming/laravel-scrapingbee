@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\Response;
@@ -73,6 +75,17 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
+     * https://www.scrapingbee.com/documentation/google/#device
+     */
+    public function device(string $device): self
+    {
+        $this->params['device'] = $device;
+
+        return $this;
+    }
+
+
+    /**
      * https://www.scrapingbee.com/documentation/google/#nb_results
      */
     public function nbResults(int $count): self
@@ -98,6 +111,23 @@ final class LaravelScrapingBeeGoogleSearch
     public function language(string $language): self
     {
         $this->params['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/google/#light_request
+     */
+    public function lightRequest(bool $lightRequest = true): self
+    {
+        $this->params['light_request'] = $lightRequest;
+
+        return $this;
+    }
+
+    public function autoCorrection(): self
+    {
+        $this->params['nfpr'] = true;
 
         return $this;
     }

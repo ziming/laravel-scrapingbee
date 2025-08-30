@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\ConnectionException;
@@ -204,9 +206,9 @@ final class LaravelScrapingBee
     /**
      * https://www.scrapingbee.com/documentation/#return_page_source
      */
-    public function returnPageSource(): self
+    public function returnPageSource(bool $returnPageSource = true): self
     {
-        $this->params['return_page_source'] = true;
+        $this->params['return_page_source'] = $returnPageSource;
 
         return $this;
     }
