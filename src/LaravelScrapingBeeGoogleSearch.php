@@ -89,6 +89,7 @@ final class LaravelScrapingBeeGoogleSearch
     /**
      * https://www.scrapingbee.com/documentation/google/#nb_results
      */
+    #[\Deprecated]
     public function nbResults(int $count): self
     {
         $this->params['nb_results'] = $count;
