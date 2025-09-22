@@ -93,7 +93,6 @@ $response = $scrapingBeeClient->setParams([
 $googleSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeGoogleSearch::make();
 
 $response = $googleSearchScrapingBeeClient
-    ->nbResults(8)
     ->page(1)
     ->search('scrapingbee')
     ->get();
