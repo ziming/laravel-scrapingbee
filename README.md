@@ -5,7 +5,7 @@
 
 A PHP Laravel Package for [ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel)
 
-If you wanted to support my work you can use my [referral link to create an account & be a paid customer of ScrapingBee](https://www.scrapingbee.com?fpr=php-laravel).
+If you wish to support my work you can use my [referral link to create a free account, I get a small reward if you upgrade to a paid plan in the future](https://www.scrapingbee.com?fpr=php-laravel).
 
 ## Installation
 
