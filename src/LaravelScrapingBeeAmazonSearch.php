@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ziming\LaravelScrapingBee;
 
 use Illuminate\Http\Client\ConnectionException;
@@ -7,7 +9,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
 
-final class LaravelScrapingBeeWalmartSearch
+final class LaravelScrapingBeeAmazonSearch
 {
     use Conditionable;
 
@@ -30,7 +32,7 @@ final class LaravelScrapingBeeWalmartSearch
 
         $this->baseUrl = config(
             'scrapingbee.walmart_search_base_url',
-            'https://app.scrapingbee.com/api/v1/walmart/search'
+            'https://app.scrapingbee.com/api/v1/amazon/search'
         );
     }
 
@@ -47,7 +49,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#light_request_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/amazon/#light_request_AmazonSearch
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -57,7 +59,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#query
+     * https://www.scrapingbee.com/documentation/amazon/#query_AmazonSearch
      */
     public function query(string $query): self
     {
@@ -67,37 +69,27 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#page
+     * https://www.scrapingbee.com/documentation/amazon/#start_page
      */
-    public function page(int $page): self
+    public function startPage(int $page): self
     {
-        $this->params['page'] = $page;
+        $this->params['start_page'] = $page;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#min_price
+     * https://www.scrapingbee.com/documentation/amazon/#pages
      */
-    public function minPrice(int $minPrice): self
+    public function pages(int $pages): self
     {
-        $this->params['min_price'] = $minPrice;
+        $this->params['pages'] = $pages;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#max_price
-     */
-    public function maxPrice(int $maxPrice): self
-    {
-        $this->params['max_price'] = $maxPrice;
-
-        return $this;
-    }
-
-    /*
-     * https://www.scrapingbee.com/documentation/walmart/#sort_by
+     * https://www.scrapingbee.com/documentation/amazon/#sort_by
      */
     public function sortBy(string $sortBy): self
     {
@@ -107,7 +99,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#device_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/amazon/#device_AmazonSearch
      */
     public function device(string $device): self
     {
@@ -117,7 +109,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/amazon/#domain_AmazonSearch
      */
     public function domain(string $domain): self
     {
@@ -127,57 +119,77 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /*
-     * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/amazon/#country_AmazonSearch
      */
-    public function fulfillmentSpeed(string $fulfillmentSpeed): self
+    public function country(string $isoCountryCode): self
     {
-        $this->params['fulfillment_speed'] = $fulfillmentSpeed;
+        $this->params['country'] = $isoCountryCode;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#fulfillment_type
+     * https://www.scrapingbee.com/documentation/amazon/#zip_code_AmazonSearch
      */
-    public function fulfillmentType(string $fulfillmentType): self
+    public function zipCode(string $zipCode): self
     {
-        $this->params['fulfillment_type'] = $fulfillmentType;
+        $this->params['zip_code'] = $zipCode;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#delivery_zip
+     * https://www.scrapingbee.com/documentation/amazon/#language_AmazonSearch
      */
-    public function deliveryZip(string $deliveryZip): self
+    public function language(string $language): self
     {
-        $this->params['delivery_zip'] = $deliveryZip;
+        $this->params['language'] = $language;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#store_id
+     * https://www.scrapingbee.com/documentation/amazon/#currency_AmazonSearch
      */
-    public function storeId(string $storeId): self
+    public function currency(string $currency): self
     {
-        $this->params['store_id'] = $storeId;
+        $this->params['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#extra_params
+     * https://www.scrapingbee.com/documentation/amazon/#category_id
      */
-    public function extraParams(array $extraParams): self
+    public function categoryId(string $categoryId): self
     {
-        $this->params['extra_params'] = http_build_query($extraParams);
+        $this->params['category_id'] = $categoryId;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/amazon/#merchant_id
+     */
+    public function merchantId(string $merchantId): self
+    {
+        $this->params['merchant_id'] = $merchantId;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/amazon/#autoselect_variant
+     */
+    public function autoSelectVariant(bool $autoSelectVariant = true): self
+    {
+        $this->params['autoselect_variant'] = $autoSelectVariant;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/amazon/#add_html_AmazonSearch
      */
     public function addHtml(): self
     {
@@ -187,7 +199,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /*
-     * If the API hasn't caught up, and you need to support a new ScrapingBee parameter,
+     * If the API hasn't caught up and you need to support a new ScrapingBee parameter,
      * you can set it using this method.
      */
     public function setParam(string $key, mixed $value): self

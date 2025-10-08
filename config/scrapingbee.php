@@ -11,4 +11,7 @@ return [
 
     'walmart_search_base_url' => env('SCRAPINGBEE_WALMART_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/walmart/search'),
     'walmart_product_base_url' => env('SCRAPINGBEE_WALMART_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/walmart/product'),
+
+    'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
+    'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
 ];

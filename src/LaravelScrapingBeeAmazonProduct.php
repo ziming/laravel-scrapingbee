@@ -7,7 +7,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
 
-final class LaravelScrapingBeeGoogleSearch
+final class LaravelScrapingBeeAmazonProduct
 {
     use Conditionable;
 
@@ -29,8 +29,8 @@ final class LaravelScrapingBeeGoogleSearch
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
 
         $this->baseUrl = config(
-            'scrapingbee.google_search_base_url',
-            'https://app.scrapingbee.com/api/v1/store/google'
+            'scrapingbee.amazon_product_base_url',
+            'https://app.scrapingbee.com/api/v1/amazon/product'
         );
     }
 
@@ -47,37 +47,27 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#search
+     * https://www.scrapingbee.com/documentation/amazon/#light_request
      */
-    public function search(string $query): self
+    public function lightRequest(bool $lightRequest = true): self
     {
-        $this->params['search'] = $query;
+        $this->params['light_request'] = $lightRequest;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#search_type
+     * https://www.scrapingbee.com/documentation/amazon/#query
      */
-    public function searchType(string $type): self
+    public function query(string $productAsin): self
     {
-        $this->params['search_type'] = $type;
+        $this->params['query'] = $productAsin;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#country_code
-     */
-    public function countryCode(string $countryCode): self
-    {
-        $this->params['country_code'] = $countryCode;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#device
+     * https://www.scrapingbee.com/documentation/amazon/#device_AmazonProduct
      */
     public function device(string $device): self
     {
@@ -87,28 +77,37 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#nb_results
+     * https://www.scrapingbee.com/documentation/amazon/#domain
      */
-    #[\Deprecated]
-    public function nbResults(int $count): self
+    public function domain(string $domain): self
     {
-        $this->params['nb_results'] = $count;
+        $this->params['domain'] = $domain;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#page
+     * https://www.scrapingbee.com/documentation/amazon/#country_AmazonProduct
      */
-    public function page(int $pageNumber): self
+    public function country(string $country): self
     {
-        $this->params['page'] = $pageNumber;
+        $this->params['country'] = $country;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#language
+     * https://www.scrapingbee.com/documentation/amazon/#zip_code_AmazonProduct
+     */
+    public function zipCode(string $zipCode): self
+    {
+        $this->params['zip_code'] = $zipCode;
+
+        return $this;
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/amazon/#language
      */
     public function language(string $language): self
     {
@@ -118,34 +117,17 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#light_request
+     * https://www.scrapingbee.com/documentation/amazon/#currency
      */
-    public function lightRequest(bool $lightRequest = true): self
+    public function currency(string $currency): self
     {
-        $this->params['light_request'] = $lightRequest;
-
-        return $this;
-    }
-
-    public function autoCorrection(): self
-    {
-        $this->params['nfpr'] = true;
+        $this->params['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#extra_params
-     */
-    public function extraParams(array $extraParams): self
-    {
-        $this->params['extra_params'] = http_build_query($extraParams);
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/google/#add_html
+     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPIProduct
      */
     public function addHtml(): self
     {

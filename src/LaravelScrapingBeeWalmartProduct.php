@@ -117,7 +117,7 @@ final class LaravelScrapingBeeWalmartProduct
     }
 
     /*
-     * If the API hasn't caught up and you need to support a new ScrapingBee parameter,
+     * If the API hasn't caught up, and you need to support a new ScrapingBee parameter,
      * you can set it using this method.
      */
     public function setParam(string $key, mixed $value): self
