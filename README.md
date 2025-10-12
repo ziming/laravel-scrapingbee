@@ -145,11 +145,9 @@ Look at the source code of `src/LaravelScrapingBeeWalmartProduct.php` for the ot
 
 [LaravelScrapingBeeWalmartProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartProduct.php)
 
-
-
 ## Testing
 
-Currently, there are no tests. But if there are tests in the future, you can run the command below to execute the testcases.
+Currently, there are no tests as it uses credits. But if there are tests in the future, you can run the command below to execute the testcases.
 
 ```bash
 composer test
