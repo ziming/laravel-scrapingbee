@@ -145,6 +145,28 @@ Look at the source code of `src/LaravelScrapingBeeWalmartProduct.php` for the ot
 
 [LaravelScrapingBeeWalmartProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartProduct.php)
 
+
+### Amazon ScrapingBee Clients
+
+#### The Amazon Search ScrapingBee Client
+
+```php
+$amazonSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeAmazonSearch::make();
+
+$response = $amazonSearchScrapingBeeClient
+    ->query('iPhone')
+    ->startPage(2)
+    ->pages(3)
+    ->device('desktop')
+    ->currency('usd')
+    ->country('gb')
+    ->sortBy('average_review')
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeAmazonSearch.php` for the other methods (link below).
+
+[LaravelScrapingBeeAmazonSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonSearch.php)
+
 ## Testing
 
 Currently, there are no tests as it uses credits. But if there are tests in the future, you can run the command below to execute the testcases.
