@@ -167,6 +167,22 @@ Look at the source code of `src/LaravelScrapingBeeAmazonSearch.php` for the othe
 
 [LaravelScrapingBeeAmazonSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonSearch.php)
 
+#### The Amazon Product ScrapingBee Client
+
+```php
+$amazonProductScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeAmazonProduct::make();
+
+$response = $amazonProductScrapingBeeClient
+    ->query('ASIN')
+    ->device('desktop')
+    ->currency('usd')
+    ->country('gb')
+    ->get();
+```
+
+Look at the source code of `src/LaravelScrapingBeeAmazonProduct.php` for the other methods (link below).
+[LaravelScrapingBeeAmazonProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonProduct.php)
+
 ## Testing
 
 Currently, there are no tests as it uses credits. But if there are tests in the future, you can run the command below to execute the testcases.

@@ -67,6 +67,20 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
+     * Alias for query method
+     *
+     * ASIN stands for Amazon Standard Identification Number
+     *
+     * @see query()
+     */
+    public function asin(string $productAsin): self
+    {
+        $this->params['query'] = $productAsin;
+
+        return $this;
+    }
+
+    /**
      * https://www.scrapingbee.com/documentation/amazon/#device_AmazonProduct
      */
     public function device(string $device): self
