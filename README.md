@@ -87,6 +87,7 @@ $response = $scrapingBeeClient->setParams([
     ])->get('https://www.scrapingbee.com')
 ```
 
+
 ### The Google Search ScrapingBee Client
 
 ```php
@@ -101,7 +102,9 @@ Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the othe
 
 [LaravelScrapingBeeGoogleSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGoogleSearch.php)
 
-### The Walmart Search ScrapingBee Client
+### Walmart ScrapingBee Clients
+
+#### The Walmart Search ScrapingBee Client
 
 ```php
 $walmartSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeWalmartSearch::make();
@@ -121,8 +124,7 @@ Look at the source code of `src/LaravelScrapingBeeWalmartSearch.php` for the oth
 
 [LaravelScrapingBeeWalmartSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartSearch.php)
 
-
-### The Walmart Product ScrapingBee Client
+#### The Walmart Product ScrapingBee Client
 
 ```php
 $walmartProductScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeWalmartProduct::make();
@@ -137,6 +139,7 @@ $response = $walmartProductScrapingBeeClient
 Look at the source code of `src/LaravelScrapingBeeWalmartProduct.php` for the other methods (link below).
 
 [LaravelScrapingBeeWalmartProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeWalmartProduct.php)
+
 
 
 ## Testing
