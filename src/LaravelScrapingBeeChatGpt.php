@@ -40,31 +40,13 @@ final class LaravelScrapingBeeChatGpt
     /**
      * @throws ConnectionException
      */
-    private function request(string $method, string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
+    public function get(string $url): Response
     {
-        // https://www.scrapingbee.com/documentation/#encoding-url
-        // urlencode($url) make things fail somehow.
-        // My guess is urlencode is run at the Http::get() / Http::post() level already
-        $this->params['url'] = $url;
-
         $this->params['api_key'] = $this->apiKey;
-
-        $http = Http::withHeaders($this->headers)->timeout($this->timeout);
-
-        $response = $http->get($this->baseUrl, $this->params);
-
-        // Reset the params and headers
+        $response = Http::get($this->baseUrl, $this->params);
         $this->reset();
 
         return $response;
-    }
-
-    /**
-     * @throws ConnectionException
-     */
-    public function get(string $url): Response
-    {
-        return $this->request('GET', $url);
     }
 
     /**
