@@ -16,23 +16,21 @@ final class LaravelScrapingBeeChatGpt
 
     private readonly string $baseUrl;
     private readonly string $apiKey;
-    private readonly int $timeout;
 
     private array $params = [];
     private array $headers = [];
 
-    public static function make(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null): self
+    public static function make(#[\SensitiveParameter] ?string $apiKey = null): self
     {
-        return new self($apiKey, $timeout);
+        return new self($apiKey);
     }
 
-    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
         // If $apiKey is null, then we use the 1 in the config file.
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
-        $this->timeout = $timeout ?? config('scrapingbee.timeout');
 
         $this->baseUrl = config(
             'scrapingbee.chatgpt_base_url',
@@ -76,6 +74,27 @@ final class LaravelScrapingBeeChatGpt
     public function prompt(string $prompt): self
     {
         $this->params['prompt'] = $prompt;
+
+        return $this;
+    }
+
+    public function addHtml(): self
+    {
+        $this->params['add_html'] = true;
+
+        return $this;
+    }
+
+    public function countryCode(string $countryCode): self
+    {
+        $this->params['country_code'] = $countryCode;
+
+        return $this;
+    }
+
+    public function webSearch(): self
+    {
+        $this->params['search'] = true;
 
         return $this;
     }

@@ -190,6 +190,9 @@ $chatGptScrapingbeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeChatGpt:
 
 $response = $chatGptScrapingbeeClient
     ->prompt('Explain why a career in web development is a bad choice')
+    ->webSearch()
+    ->countryCode('US')
+    ->addHtml()
     ->get();
 ```
 Look at the source code of `src/LaravelScrapingBeeChatGpt.php` for the other methods (link below).
