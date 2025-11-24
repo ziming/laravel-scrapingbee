@@ -8,7 +8,6 @@ use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
-use JsonException;
 
 final class LaravelScrapingBeeChatGpt
 {
