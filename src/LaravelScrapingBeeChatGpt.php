@@ -1,0 +1,100 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Ziming\LaravelScrapingBee;
+
+use Illuminate\Http\Client\ConnectionException;
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Traits\Conditionable;
+use JsonException;
+
+final class LaravelScrapingBeeChatGpt
+{
+    use Conditionable;
+
+    private readonly string $baseUrl;
+    private readonly string $apiKey;
+    private readonly int $timeout;
+
+    private array $params = [];
+    private array $headers = [];
+
+    public static function make(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null): self
+    {
+        return new self($apiKey, $timeout);
+    }
+
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
+    {
+        // If somebody pass '' into the constructor, we should use '' as the api key
+        // even if it doesn't make sense.
+        // If $apiKey is null, then we use the 1 in the config file.
+        $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
+        $this->timeout = $timeout ?? config('scrapingbee.timeout');
+
+        $this->baseUrl = config(
+            'scrapingbee.chatgpt_base_url',
+            'https://app.scrapingbee.com/api/v1/chatgpt'
+        );
+    }
+
+    /**
+     * @throws ConnectionException
+     */
+    private function request(string $method, string $url, array $data = [], string $postContentType = 'application/x-www-form-urlencoded; charset=utf-8'): Response
+    {
+        // https://www.scrapingbee.com/documentation/#encoding-url
+        // urlencode($url) make things fail somehow.
+        // My guess is urlencode is run at the Http::get() / Http::post() level already
+        $this->params['url'] = $url;
+
+        $this->params['api_key'] = $this->apiKey;
+
+        $http = Http::withHeaders($this->headers)->timeout($this->timeout);
+
+        $response = $http->get($this->baseUrl, $this->params);
+
+        // Reset the params and headers
+        $this->reset();
+
+        return $response;
+    }
+
+    /**
+     * @throws ConnectionException
+     */
+    public function get(string $url): Response
+    {
+        return $this->request('GET', $url);
+    }
+
+    /**
+     * https://www.scrapingbee.com/documentation/chatgpt/?fpr=php-laravel#prompt
+     */
+    public function prompt(string $prompt): self
+    {
+        $this->params['prompt'] = $prompt;
+
+        return $this;
+    }
+
+    /*
+     * If the API hasn't caught up, and you need to support a new ScrapingBee parameter,
+     * you can set it using this method.
+     */
+    public function setParam(string $key, mixed $value): self
+    {
+        $this->params[$key] = $value;
+
+        return $this;
+    }
+
+    private function reset(): self
+    {
+        $this->params = [];
+
+        return $this;
+    }
+}

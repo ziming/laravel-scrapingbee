@@ -14,4 +14,10 @@ return [
 
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
+
+
+    // YouTube will come soon, but not yet
+    // 'youtube_search_base_url' => env('SCRAPINGBEE_YOUTUBE_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/search'),
+
+    'chatgpt_base_url' => env('SCRAPINGBEE_CHATGPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/chatgpt'),
 ];

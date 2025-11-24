@@ -183,6 +183,20 @@ $response = $amazonProductScrapingBeeClient
 Look at the source code of `src/LaravelScrapingBeeAmazonProduct.php` for the other methods (link below).
 [LaravelScrapingBeeAmazonProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonProduct.php)
 
+### ChatGPT ScrapingBee Client
+
+```php
+$chatGptScrapingbeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeChatGpt::make();
+
+$response = $chatGptScrapingbeeClient
+    ->prompt('Explain why a career in web development is a bad choice')
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeChatGpt.php` for the other methods (link below).
+
+[LaravelScrapingBeeChatGpt.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeChatGpt.php)
+
+
 ## Testing
 
 Currently, there are no tests as it uses credits. But if there are tests in the future, you can run the command below to execute the testcases.
