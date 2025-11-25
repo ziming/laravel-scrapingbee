@@ -41,6 +41,7 @@ final class LaravelScrapingBeeYouTubeSearch
         $this->params['api_key'] = $this->apiKey;
         $response = Http::get($this->baseUrl, $this->params);
         $this->reset();
+
         return $response;
     }
 
@@ -51,6 +52,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function search(string $query): self
     {
         $this->params['search'] = $query;
+
         return $this;
     }
 
@@ -60,6 +62,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function only360(): self
     {
         $this->params['360'] = true;
+
         return $this;
     }
 
@@ -69,6 +72,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function only3d(): self
     {
         $this->params['3d'] = true;
+
         return $this;
     }
 
@@ -78,6 +82,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function only4k(): self
     {
         $this->params['4k'] = true;
+
         return $this;
     }
 
@@ -87,6 +92,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function creativeCommons(): self
     {
         $this->params['creative_commons'] = true;
+
         return $this;
     }
 
@@ -96,6 +102,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function duration(string $value): self
     {
         $this->params['duration'] = $value;
+
         return $this;
     }
 
@@ -105,6 +112,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function onlyHd(): self
     {
         $this->params['hd'] = true;
+
         return $this;
     }
 
@@ -114,6 +122,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function onlyHdr(): self
     {
         $this->params['hdr'] = true;
+
         return $this;
     }
 
@@ -123,6 +132,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function live(): self
     {
         $this->params['live'] = true;
+
         return $this;
     }
 
@@ -132,6 +142,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function location(): self
     {
         $this->params['location'] = true;
+
         return $this;
     }
 
@@ -141,6 +152,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function purchased(): self
     {
         $this->params['purchased'] = true;
+
         return $this;
     }
 
@@ -150,6 +162,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function sortBy(string $value): self
     {
         $this->params['sort_by'] = $value;
+
         return $this;
     }
 
@@ -159,6 +172,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function subtitles(): self
     {
         $this->params['subtitles'] = true;
+
         return $this;
     }
 
@@ -168,6 +182,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function type(string $value): self
     {
         $this->params['type'] = $value;
+
         return $this;
     }
 
@@ -177,6 +192,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function uploadDate(string $value): self
     {
         $this->params['upload_date'] = $value;
+
         return $this;
     }
 
@@ -186,6 +202,7 @@ final class LaravelScrapingBeeYouTubeSearch
     public function onlyVr180(bool $value = true): self
     {
         $this->params['vr180'] = $value;
+
         return $this;
     }
 
@@ -195,12 +212,14 @@ final class LaravelScrapingBeeYouTubeSearch
     public function setParam(string $key, mixed $value): self
     {
         $this->params[$key] = $value;
+
         return $this;
     }
 
     private function reset(): self
     {
         $this->params = [];
+
         return $this;
     }
 }
