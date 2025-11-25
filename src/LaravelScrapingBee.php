@@ -87,7 +87,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#block-ads
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#block-ads
      */
     public function blockAds(): self
     {
@@ -97,7 +97,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#block-resources
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#block-resources
      */
     public function allowResources(): self
     {
@@ -107,7 +107,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#cookies
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#cookies
      */
     public function setCustomCookies(array $cookies): self
     {
@@ -117,7 +117,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#geolocation
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#geolocation
      */
     public function countryCode(string $countryCode): self
     {
@@ -127,7 +127,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#custom-google
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#custom-google
      */
     public function customGoogle(): self
     {
@@ -137,7 +137,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#device
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#device
      */
     public function device(string $device): self
     {
@@ -147,8 +147,8 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#json_css
-     * https://www.scrapingbee.com/documentation/data-extraction/
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#json_css
+     * https://www.scrapingbee.com/documentation/data-extraction/?fpr=php-laravel
      * @throws JsonException
      */
     public function extractDataFromCssRules(array $cssRules): self
@@ -159,8 +159,8 @@ final class LaravelScrapingBee
     }
 
     /*
-     * https://www.scrapingbee.com/documentation/#ai_query
-     * https://www.scrapingbee.com/documentation/#ai_selector
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#ai_query
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#ai_selector
      *
      * There is no aiSelector() method since it need to be used with aiQuery
      */
@@ -176,8 +176,8 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#ai_extract_rules
-     * https://www.scrapingbee.com/documentation/#ai_selector
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#ai_extract_rules
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#ai_selector
      * @throws JsonException
      */
     public function aiExtractRules(array $rules, ?string $selector = null): self
@@ -192,7 +192,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#json_response
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#json_response
      */
     public function jsonResponse(): self
     {
@@ -202,7 +202,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#return_page_source
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#return_page_source
      */
     public function returnPageSource(bool $returnPageSource = true): self
     {
@@ -211,6 +211,9 @@ final class LaravelScrapingBee
         return $this;
     }
 
+    /*
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#scraping_config
+     */
     public function scrapingConfig(string $configName): self
     {
         $this->params['scraping_config'] = $configName;
@@ -219,7 +222,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-execution
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-execution
      */
     public function jsSnippet(string $jsCodeSnippet): self
     {
@@ -229,7 +232,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-scroll
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-scroll
      */
     public function jsScroll(): self
     {
@@ -239,7 +242,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-scroll
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-scroll
      */
     public function jsScrollWait(int $milliseconds): self
     {
@@ -249,7 +252,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-scroll
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-scroll
      */
     public function jsScrollCount(int $count): self
     {
@@ -259,7 +262,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#premium-proxy
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#premium-proxy
      */
     public function premiumProxy(): self
     {
@@ -269,7 +272,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#stealth_proxy
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#stealth_proxy
      */
     public function stealthProxy(): self
     {
@@ -279,7 +282,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#own_proxy
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#own_proxy
      */
     public function ownProxy(string $proxy): self
     {
@@ -289,7 +292,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-rendering
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-rendering
      */
     public function disableJs(): self
     {
@@ -299,8 +302,8 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#javascript-execution
-     * https://www.scrapingbee.com/documentation/js-scenario/
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#javascript-execution
+     * https://www.scrapingbee.com/documentation/?fpr=php-laraveljs-scenario/
      * @throws JsonException
      */
     public function jsScenario(array $instructions, bool $strict = true): self
@@ -314,7 +317,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#page-source
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#page-source
      */
     public function pageSource(): self
     {
@@ -324,7 +327,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#session_id
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#session_id
      */
     public function session(int $id): self
     {
@@ -334,7 +337,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#timeout
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#timeout
      */
     public function timeout(int $milliseconds): self
     {
@@ -344,7 +347,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#screenshot
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#screenshot
      */
     public function screenshot(): self
     {
@@ -354,7 +357,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#screenshot_selector
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#screenshot_selector
      */
     public function screenshotSelector(string $selector): self
     {
@@ -364,7 +367,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#screenshot_full_page
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#screenshot_full_page
      */
     public function screenshotFullPage(): self
     {
@@ -374,7 +377,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#transparent_status_code
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#transparent_status_code
      */
     public function transparentHttpStatusCode(): self
     {
@@ -384,7 +387,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#wait
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#wait
      */
     public function wait(int $milliseconds): self
     {
@@ -394,7 +397,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#wait-for
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#wait-for
      */
     public function waitForCssSelector(string $cssSelector): self
     {
@@ -404,7 +407,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#wait_browser
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#wait_browser
      */
     public function waitForBrowser(string $networkCondition = 'domcontentloaded'): self
     {
@@ -414,7 +417,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#width_or_height
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#width_or_height
      */
     public function windowWidth(int $windowWidth): self
     {
@@ -424,7 +427,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#width_or_height
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#width_or_height
      */
     public function windowHeight(int $windowHeight): self
     {
@@ -434,7 +437,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/data-extraction/#output
+     * https://www.scrapingbee.com/documentation/data-extraction/?fpr=php-laravel#output
      */
     public function output(string $output): self
     {
@@ -501,7 +504,7 @@ final class LaravelScrapingBee
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/#UsageEndpoint
+     * https://www.scrapingbee.com/documentation/?fpr=php-laravel#UsageEndpoint
      */
     public function usageStatistics(): Response
     {

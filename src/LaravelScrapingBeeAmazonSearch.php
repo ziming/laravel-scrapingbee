@@ -49,7 +49,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#light_request_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#light_request_AmazonSearch
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -59,7 +59,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#query_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#query_AmazonSearch
      */
     public function query(string $query): self
     {
@@ -69,7 +69,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#start_page
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#start_page
      */
     public function startPage(int $page): self
     {
@@ -79,7 +79,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#pages
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#pages
      */
     public function pages(int $pages): self
     {
@@ -89,7 +89,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#sort_by
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#sort_by
      */
     public function sortBy(string $sortBy): self
     {
@@ -99,7 +99,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#device_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#device_AmazonSearch
      */
     public function device(string $device): self
     {
@@ -109,7 +109,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#domain_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#domain_AmazonSearch
      */
     public function domain(string $domain): self
     {
@@ -119,7 +119,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /*
-     * https://www.scrapingbee.com/documentation/amazon/#country_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#country_AmazonSearch
      */
     public function country(string $isoCountryCode): self
     {
@@ -129,7 +129,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#zip_code_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#zip_code_AmazonSearch
      */
     public function zipCode(string $zipCode): self
     {
@@ -139,7 +139,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#language_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#language_AmazonSearch
      */
     public function language(string $language): self
     {
@@ -149,7 +149,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#currency_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#currency_AmazonSearch
      */
     public function currency(string $currency): self
     {
@@ -159,7 +159,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#category_id
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#category_id
      */
     public function categoryId(string $categoryId): self
     {
@@ -169,7 +169,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#merchant_id
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#merchant_id
      */
     public function merchantId(string $merchantId): self
     {
@@ -179,7 +179,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#autoselect_variant
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#autoselect_variant
      */
     public function autoSelectVariant(bool $autoSelectVariant = true): self
     {
@@ -189,7 +189,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#add_html_AmazonSearch
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#add_html_AmazonSearch
      */
     public function addHtml(): self
     {
@@ -199,7 +199,7 @@ final class LaravelScrapingBeeAmazonSearch
     }
 
     /*
-     * If the API hasn't caught up and you need to support a new ScrapingBee parameter,
+     * If the API hasn't caught up, and you need to support a new ScrapingBee parameter,
      * you can set it using this method.
      */
     public function setParam(string $key, mixed $value): self

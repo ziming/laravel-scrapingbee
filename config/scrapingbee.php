@@ -15,9 +15,13 @@ return [
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
 
+    'youtube_search_base_url' => env('SCRAPINGBEE_YOUTUBE_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/search'),
+    'youtube_metadata_base_url' => env('SCRAPINGBEE_YOUTUBE_METADATA_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/metadata'),
+    'youtube_transcript_base_url' => env('SCRAPINGBEE_YOUTUBE_TRANSCRIPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/transcript'),
 
-    // YouTube will come soon, but not yet
-    // 'youtube_search_base_url' => env('SCRAPINGBEE_YOUTUBE_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/search'),
+    // Check video transcript availability
+    'youtube_trainability_base_url' => env('SCRAPINGBEE_YOUTUBE_TRAINABILITY_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/trainability'),
+
 
     'chatgpt_base_url' => env('SCRAPINGBEE_CHATGPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/chatgpt'),
 ];

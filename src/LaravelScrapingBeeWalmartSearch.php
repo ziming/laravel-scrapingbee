@@ -47,7 +47,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#light_request_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#light_request_WalmartAPISearch
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -57,7 +57,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#query
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#query
      */
     public function query(string $query): self
     {
@@ -67,7 +67,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#page
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#page
      */
     public function page(int $page): self
     {
@@ -77,7 +77,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#min_price
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#min_price
      */
     public function minPrice(int $minPrice): self
     {
@@ -87,7 +87,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#max_price
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#max_price
      */
     public function maxPrice(int $maxPrice): self
     {
@@ -97,7 +97,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /*
-     * https://www.scrapingbee.com/documentation/walmart/#sort_by
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#sort_by
      */
     public function sortBy(string $sortBy): self
     {
@@ -107,7 +107,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#device_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#device_WalmartAPISearch
      */
     public function device(string $device): self
     {
@@ -117,7 +117,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#domain_WalmartAPISearch
      */
     public function domain(string $domain): self
     {
@@ -127,7 +127,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /*
-     * https://www.scrapingbee.com/documentation/walmart/#domain_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#domain_WalmartAPISearch
      */
     public function fulfillmentSpeed(string $fulfillmentSpeed): self
     {
@@ -137,7 +137,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#fulfillment_type
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#fulfillment_type
      */
     public function fulfillmentType(string $fulfillmentType): self
     {
@@ -147,7 +147,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#delivery_zip
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#delivery_zip
      */
     public function deliveryZip(string $deliveryZip): self
     {
@@ -157,7 +157,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#store_id
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#store_id
      */
     public function storeId(string $storeId): self
     {
@@ -167,17 +167,7 @@ final class LaravelScrapingBeeWalmartSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#extra_params
-     */
-    public function extraParams(array $extraParams): self
-    {
-        $this->params['extra_params'] = http_build_query($extraParams);
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPISearch
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#add_html_WalmartAPISearch
      */
     public function addHtml(): self
     {

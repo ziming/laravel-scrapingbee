@@ -47,7 +47,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#light_request
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#light_request
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -57,7 +57,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#query
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#query
      */
     public function query(string $productAsin): self
     {
@@ -81,7 +81,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#device_AmazonProduct
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#device_AmazonProduct
      */
     public function device(string $device): self
     {
@@ -91,7 +91,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#domain
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#domain
      */
     public function domain(string $domain): self
     {
@@ -101,7 +101,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#country_AmazonProduct
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#country_AmazonProduct
      */
     public function country(string $country): self
     {
@@ -111,7 +111,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#zip_code_AmazonProduct
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#zip_code_AmazonProduct
      */
     public function zipCode(string $zipCode): self
     {
@@ -121,7 +121,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#language
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#language
      */
     public function language(string $language): self
     {
@@ -131,7 +131,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/amazon/#currency
+     * https://www.scrapingbee.com/documentation/amazon/?fpr=php-laravel#currency
      */
     public function currency(string $currency): self
     {
@@ -141,7 +141,7 @@ final class LaravelScrapingBeeAmazonProduct
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/walmart/#add_html_WalmartAPIProduct
+     * https://www.scrapingbee.com/documentation/walmart/?fpr=php-laravel#add_html_WalmartAPIProduct
      */
     public function addHtml(): self
     {

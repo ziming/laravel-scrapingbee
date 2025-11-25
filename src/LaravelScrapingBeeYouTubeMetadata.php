@@ -9,7 +9,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Traits\Conditionable;
 
-final class LaravelScrapingBeeChatGpt
+final class LaravelScrapingBeeYouTubeMetadata
 {
     use Conditionable;
 
@@ -31,8 +31,8 @@ final class LaravelScrapingBeeChatGpt
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
 
         $this->baseUrl = config(
-            'scrapingbee.chatgpt_base_url',
-            'https://app.scrapingbee.com/api/v1/chatgpt'
+            'scrapingbee.youtube_metadata_base_url',
+            'https://app.scrapingbee.com/api/v1/metadata'
         );
     }
 
@@ -49,32 +49,12 @@ final class LaravelScrapingBeeChatGpt
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/chatgpt/?fpr=php-laravel#prompt
+     * Required
+     * https://www.scrapingbee.com/documentation/youtube/?fpr=php-laravel#video_id_YouTubeMetadata
      */
-    public function prompt(string $prompt): self
+    public function videoId(string $videoId): self
     {
-        $this->params['prompt'] = $prompt;
-
-        return $this;
-    }
-
-    public function addHtml(): self
-    {
-        $this->params['add_html'] = true;
-
-        return $this;
-    }
-
-    public function countryCode(string $countryCode): self
-    {
-        $this->params['country_code'] = $countryCode;
-
-        return $this;
-    }
-
-    public function webSearch(): self
-    {
-        $this->params['search'] = true;
+        $this->params['video_id'] = $videoId;
 
         return $this;
     }

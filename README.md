@@ -183,6 +183,55 @@ $response = $amazonProductScrapingBeeClient
 Look at the source code of `src/LaravelScrapingBeeAmazonProduct.php` for the other methods (link below).
 [LaravelScrapingBeeAmazonProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonProduct.php)
 
+### YouTube ScrapingBee Clients
+
+#### YouTube ScrapingBee Search Client
+```php
+$youTubeScrapingBeeSearchClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeYouTubeSearch::make();
+
+$response = $youTubeScrapingBeeSearchClient
+    ->search('Python Tutorial')
+    ->get();
+````
+
+Look at the source code of `src/LaravelScrapingBeeYouTubeSearch.php` for the other methods (link below).
+[LaravelScrapingBeeYouTubeSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeYouTubeSearch.php)
+
+#### YouTube ScrapingBee Metadata Client
+```php
+$youTubeScrapingBeeMetadataClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeYouTubeMetadata::make();
+$response = $youTubeScrapingBeeMetadataClient
+    ->videoId('rfscVS0vtbw')
+    ->get();
+```
+
+Look at the source code of `src/LaravelScrapingBeeYouTubeMetadata.php` for the other methods (link below).
+[LaravelScrapingBeeYouTubeMetadata.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeYouTubeMetadata.php)
+
+#### YouTube ScrapingBee Transcript Client
+```php
+$youTubeScrapingBeeTranscriptClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeYouTubeTranscript::make();
+$response = $youTubeScrapingBeeTranscriptClient
+    ->videoId('rfscVS0vtbw')
+    ->language('es')
+    ->transcriptOrigin('uploader_provided')
+    ->get();
+```
+
+Look at the source code of `src/LaravelScrapingBeeYouTubeTranscript.php` for the other methods (link below).
+[LaravelScrapingBeeYouTubeTranscript.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeYouTubeTranscript.php)
+
+#### YouTube ScrapingBee Trainability Client
+```php
+$youTubeScrapingBeeTrainabilityClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeYouTubeTrainability::make();
+$response = $youTubeScrapingBeeTrainabilityClient
+    ->videoId('rfscVS0vtbw')
+    ->get();
+```
+
+Look at the source code of `src/LaravelScrapingBeeYouTubeTrainability.php` for the other methods (link below).
+[LaravelScrapingBeeYouTubeTrainability.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeYouTubeTrainability.php)
+
 ### ChatGPT ScrapingBee Client
 
 ```php

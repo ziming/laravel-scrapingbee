@@ -47,7 +47,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#search
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#search
      */
     public function search(string $query): self
     {
@@ -57,7 +57,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#search_type
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#search_type
      */
     public function searchType(string $type): self
     {
@@ -67,7 +67,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#country_code
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#country_code
      */
     public function countryCode(string $countryCode): self
     {
@@ -77,7 +77,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#device
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#device
      */
     public function device(string $device): self
     {
@@ -87,7 +87,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#nb_results
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#nb_results
      */
     #[\Deprecated]
     public function nbResults(int $count): self
@@ -98,7 +98,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#page
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#page
      */
     public function page(int $pageNumber): self
     {
@@ -108,7 +108,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#language
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#language
      */
     public function language(string $language): self
     {
@@ -118,7 +118,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#light_request
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#light_request
      */
     public function lightRequest(bool $lightRequest = true): self
     {
@@ -135,7 +135,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#extra_params
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#extra_params
      */
     public function extraParams(array $extraParams): self
     {
@@ -145,7 +145,7 @@ final class LaravelScrapingBeeGoogleSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/google/#add_html
+     * https://www.scrapingbee.com/documentation/google/?fpr=php-laravel#add_html
      */
     public function addHtml(): self
     {
