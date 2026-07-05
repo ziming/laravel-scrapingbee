@@ -35,6 +35,8 @@ return [
 
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
+
+    'gemini_base_url' => env('SCRAPINGBEE_GEMINI_BASE_URL', 'https://app.scrapingbee.com/api/v1/gemini'),
 ];
 ```
 
@@ -247,6 +249,22 @@ $response = $chatGptScrapingbeeClient
 Look at the source code of `src/LaravelScrapingBeeChatGpt.php` for the other methods (link below).
 
 [LaravelScrapingBeeChatGpt.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeChatGpt.php)
+
+### Gemini ScrapingBee Client
+
+```php
+$geminiScrapingbeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeGemini::make();
+
+$response = $geminiScrapingbeeClient
+    ->prompt('Best programming languages for data science')
+    ->countryCode('US')
+    ->tag('research')
+    ->addHtml()
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeGemini.php` for the other methods (link below).
+
+[LaravelScrapingBeeGemini.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGemini.php)
 
 
 ## Testing

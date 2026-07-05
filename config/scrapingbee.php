@@ -24,4 +24,5 @@ return [
 
 
     'chatgpt_base_url' => env('SCRAPINGBEE_CHATGPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/chatgpt'),
+    'gemini_base_url' => env('SCRAPINGBEE_GEMINI_BASE_URL', 'https://app.scrapingbee.com/api/v1/gemini'),
 ];
