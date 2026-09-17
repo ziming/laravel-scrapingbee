@@ -15,20 +15,22 @@ final class LaravelScrapingBeeGemini
 
     private readonly string $baseUrl;
     private readonly string $apiKey;
+    private readonly int $timeout;
 
     private array $params = [];
 
-    public static function make(#[\SensitiveParameter] ?string $apiKey = null): self
+    public static function make(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null): self
     {
-        return new self($apiKey);
+        return new self($apiKey, $timeout);
     }
 
-    public function __construct(#[\SensitiveParameter] ?string $apiKey = null)
+    public function __construct(#[\SensitiveParameter] ?string $apiKey = null, ?int $timeout = null)
     {
         // If somebody pass '' into the constructor, we should use '' as the api key
         // even if it doesn't make sense.
         // If $apiKey is null, then we use the 1 in the config file.
         $this->apiKey = $apiKey ?? config('scrapingbee.api_key');
+        $this->timeout = $timeout ?? (int) config('scrapingbee.timeout', 140);
 
         $this->baseUrl = config(
             'scrapingbee.gemini_base_url',
@@ -41,7 +43,9 @@ final class LaravelScrapingBeeGemini
      */
     public function get(): Response
     {
-        $response = Http::withToken($this->apiKey)->get($this->baseUrl, $this->params);
+        $response = Http::timeout($this->timeout)
+            ->withToken($this->apiKey)
+            ->get($this->baseUrl, $this->params);
         $this->reset();
 
         return $response;
@@ -60,9 +64,9 @@ final class LaravelScrapingBeeGemini
     /**
      * https://www.scrapingbee.com/documentation/gemini/?fpr=php-laravel#add_html
      */
-    public function addHtml(): self
+    public function addHtml(bool $addHtml = true): self
     {
-        $this->params['add_html'] = true;
+        $this->params['add_html'] = $addHtml ? 'true' : 'false';
 
         return $this;
     }
