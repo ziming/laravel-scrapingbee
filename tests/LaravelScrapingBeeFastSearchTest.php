@@ -20,9 +20,8 @@ class LaravelScrapingBeeFastSearchTest extends TestCase
         ]);
 
         $response = LaravelScrapingBeeFastSearch::make()
-            ->search('pizza in new york')
+            ->search('pizza & pasta + drinks: nearby')
             ->countryCode('us')
-            ->language('en')
             ->page(2)
             ->tag('docs-example')
             ->get();
@@ -35,9 +34,8 @@ class LaravelScrapingBeeFastSearchTest extends TestCase
             return str_starts_with($request->url(), 'https://example.test/fast_search?')
                 && $request->hasHeader('Authorization', 'Bearer test-api-key')
                 && $query === [
-                    'search' => 'pizza in new york',
+                    'search' => 'pizza & pasta + drinks: nearby',
                     'country_code' => 'us',
-                    'language' => 'en',
                     'page' => '2',
                     'tag' => 'docs-example',
                 ];

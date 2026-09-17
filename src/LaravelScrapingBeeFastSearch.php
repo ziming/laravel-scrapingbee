@@ -59,7 +59,7 @@ final class LaravelScrapingBeeFastSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/fast-search/?fpr=php-laravel#country_code
+     * https://www.scrapingbee.com/documentation/fast-search/?fpr=php-laravel#geolocation
      */
     public function countryCode(string $countryCode): self
     {
@@ -69,17 +69,7 @@ final class LaravelScrapingBeeFastSearch
     }
 
     /**
-     * https://www.scrapingbee.com/documentation/fast-search/?fpr=php-laravel#language
-     */
-    public function language(string $language): self
-    {
-        $this->params['language'] = $language;
-
-        return $this;
-    }
-
-    /**
-     * https://www.scrapingbee.com/documentation/fast-search/?fpr=php-laravel#page
+     * https://www.scrapingbee.com/documentation/fast-search/?fpr=php-laravel#page-number
      */
     public function page(int $page): self
     {

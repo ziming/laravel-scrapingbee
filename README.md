@@ -116,8 +116,8 @@ $fastSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeFastS
 $response = $fastSearchScrapingBeeClient
     ->search('pizza in new york')
     ->countryCode('us')
-    ->language('en')
     ->page(1)
+    ->tag('search-example')
     ->get();
 ```
 Look at the source code of `src/LaravelScrapingBeeFastSearch.php` for the other methods (link below).
