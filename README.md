@@ -29,6 +29,7 @@ return [
     'timeout' => env('SCRAPINGBEE_TIMEOUT', 140),
 
     'google_search_base_url' => env('SCRAPINGBEE_GOOGLE_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/store/google'),
+    'fast_search_base_url' => env('SCRAPINGBEE_FAST_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/fast_search'),
 
     'walmart_search_base_url' => env('SCRAPINGBEE_WALMART_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/walmart/search'),
     'walmart_product_base_url' => env('SCRAPINGBEE_WALMART_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/walmart/product'),
@@ -108,6 +109,22 @@ $response = $googleSearchScrapingBeeClient
 Look at the source code of `src/LaravelScrapingBeeGoogleSearch.php` for the other methods (link below).
 
 [LaravelScrapingBeeGoogleSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeGoogleSearch.php)
+
+### The Fast Search ScrapingBee Client
+
+```php
+$fastSearchScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeFastSearch::make();
+
+$response = $fastSearchScrapingBeeClient
+    ->search('pizza in new york')
+    ->countryCode('us')
+    ->page(1)
+    ->tag('search-example')
+    ->get();
+```
+Look at the source code of `src/LaravelScrapingBeeFastSearch.php` for the other methods (link below).
+
+[LaravelScrapingBeeFastSearch.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeFastSearch.php)
 
 ### Walmart ScrapingBee Clients
 
