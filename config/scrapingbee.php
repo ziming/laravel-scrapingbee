@@ -16,6 +16,8 @@ return [
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
 
+    'shopee_base_url' => env('SCRAPINGBEE_SHOPEE_BASE_URL', 'https://app.scrapingbee.com/api/v1/shopee'),
+
     'youtube_search_base_url' => env('SCRAPINGBEE_YOUTUBE_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/search'),
     'youtube_metadata_base_url' => env('SCRAPINGBEE_YOUTUBE_METADATA_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/metadata'),
     'youtube_transcript_base_url' => env('SCRAPINGBEE_YOUTUBE_TRANSCRIPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/youtube/transcript'),

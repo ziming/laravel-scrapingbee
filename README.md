@@ -37,6 +37,8 @@ return [
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
 
+    'shopee_base_url' => env('SCRAPINGBEE_SHOPEE_BASE_URL', 'https://app.scrapingbee.com/api/v1/shopee'),
+
     'gemini_base_url' => env('SCRAPINGBEE_GEMINI_BASE_URL', 'https://app.scrapingbee.com/api/v1/gemini'),
     'chatgpt_base_url' => env('SCRAPINGBEE_CHATGPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/chatgpt'),
 ];
@@ -202,6 +204,23 @@ $response = $amazonProductScrapingBeeClient
 
 Look at the source code of `src/LaravelScrapingBeeAmazonProduct.php` for the other methods (link below).
 [LaravelScrapingBeeAmazonProduct.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeAmazonProduct.php)
+
+### The Shopee ScrapingBee Client
+
+```php
+$shopeeScrapingBeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeShopee::make();
+
+$response = $shopeeScrapingBeeClient
+    ->url('https://shopee.co.id/product-name-i.93014939.1881883105')
+    ->addHtml()
+    ->tag('catalog-import')
+    ->get();
+```
+
+Shopee currently supports product URLs from `shopee.co.id` only. Query strings in product URLs are preserved.
+
+Look at the source code of `src/LaravelScrapingBeeShopee.php` for the other methods (link below).
+[LaravelScrapingBeeShopee.php](https://github.com/ziming/laravel-scrapingbee/blob/main/src/LaravelScrapingBeeShopee.php)
 
 ### YouTube ScrapingBee Clients
 
