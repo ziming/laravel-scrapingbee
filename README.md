@@ -35,6 +35,8 @@ return [
 
     'amazon_search_base_url' => env('SCRAPINGBEE_AMAZON_SEARCH_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/search'),
     'amazon_product_base_url' => env('SCRAPINGBEE_AMAZON_PRODUCT_BASE_URL', 'https://app.scrapingbee.com/api/v1/amazon/product'),
+
+    'chatgpt_base_url' => env('SCRAPINGBEE_CHATGPT_BASE_URL', 'https://app.scrapingbee.com/api/v1/chatgpt'),
 ];
 ```
 
@@ -239,9 +241,10 @@ $chatGptScrapingbeeClient = Ziming\LaravelScrapingBee\LaravelScrapingBeeChatGpt:
 
 $response = $chatGptScrapingbeeClient
     ->prompt('Explain why a career in web development is a bad choice')
-    ->webSearch()
-    ->countryCode('US')
+    ->search()
+    ->countryCode('us')
     ->addHtml()
+    ->tag('career-advice')
     ->get();
 ```
 Look at the source code of `src/LaravelScrapingBeeChatGpt.php` for the other methods (link below).
@@ -251,7 +254,7 @@ Look at the source code of `src/LaravelScrapingBeeChatGpt.php` for the other met
 
 ## Testing
 
-Currently, there are no tests as it uses credits. But if there are tests in the future, you can run the command below to execute the testcases.
+The test suite uses Laravel's HTTP fake and does not consume ScrapingBee credits. Run it with:
 
 ```bash
 composer test

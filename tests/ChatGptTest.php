@@ -24,9 +24,9 @@ class ChatGptTest extends TestCase
 
         $response = LaravelScrapingBeeChatGpt::make()
             ->prompt('Explain renewable energy in 100 words')
-            ->webSearch()
+            ->search()
             ->addHtml()
-            ->countryCode('US')
+            ->countryCode('us')
             ->tag('docs-example')
             ->get();
 
@@ -39,7 +39,7 @@ class ChatGptTest extends TestCase
                     'prompt' => 'Explain renewable energy in 100 words',
                     'search' => true,
                     'add_html' => true,
-                    'country_code' => 'US',
+                    'country_code' => 'us',
                     'tag' => 'docs-example',
                 ];
         });
@@ -65,5 +65,25 @@ class ChatGptTest extends TestCase
             return ($data['prompt'] ?? null) === 'Second prompt'
                 && ! array_key_exists('search', $data);
         });
+    }
+
+    #[Test]
+    public function it_supports_explicit_boolean_values_and_the_web_search_alias(): void
+    {
+        Http::fake([
+            'https://app.scrapingbee.com/api/v1/chatgpt*' => Http::response([]),
+        ]);
+
+        LaravelScrapingBeeChatGpt::make('test-api-key')
+            ->prompt('Do not search the web')
+            ->webSearch(false)
+            ->addHtml(false)
+            ->get();
+
+        Http::assertSent(fn (Request $request): bool => $request->data() === [
+            'prompt' => 'Do not search the web',
+            'search' => false,
+            'add_html' => false,
+        ]);
     }
 }

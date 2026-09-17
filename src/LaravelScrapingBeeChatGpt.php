@@ -62,13 +62,19 @@ final class LaravelScrapingBeeChatGpt
         return $this;
     }
 
-    public function addHtml(): self
+    /**
+     * https://www.scrapingbee.com/documentation/chatgpt/?fpr=php-laravel#add-html
+     */
+    public function addHtml(bool $addHtml = true): self
     {
-        $this->params['add_html'] = true;
+        $this->params['add_html'] = $addHtml;
 
         return $this;
     }
 
+    /**
+     * https://www.scrapingbee.com/documentation/chatgpt/?fpr=php-laravel#country-code
+     */
     public function countryCode(string $countryCode): self
     {
         $this->params['country_code'] = $countryCode;
@@ -76,11 +82,19 @@ final class LaravelScrapingBeeChatGpt
         return $this;
     }
 
-    public function webSearch(): self
+    /**
+     * https://www.scrapingbee.com/documentation/chatgpt/?fpr=php-laravel#search
+     */
+    public function search(bool $search = true): self
     {
-        $this->params['search'] = true;
+        $this->params['search'] = $search;
 
         return $this;
+    }
+
+    public function webSearch(bool $search = true): self
+    {
+        return $this->search($search);
     }
 
     /**
